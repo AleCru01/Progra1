@@ -3,8 +3,10 @@
 
 //PRACTICA DE MANEJO DE ARCHIVOS PARA PROYECTO FINAL DE PROGRA 1
 
-//video: 
+//videos: 
 /* https://youtu.be/XDmtYJx7t1I */
+
+//https://youtu.be/PPK28h5TmHc
 
 main(){
 	
@@ -23,21 +25,41 @@ main(){
 	
 	//Ejemplo de lectura caracter por caracter: 
 	
-	FILE * archivo = fopen("practica.txt", "rb");
+	FILE *archivo = fopen("Juan.txt", "rb");
+
 	if(archivo == NULL){
 		perror("Error en la apertura del archivo");
 		return 1;
 	}else{
 		char caracter;
 		
+		int valor;
+		char cadena[4];
 		while(feof(archivo) == 0){
+			/*
 			caracter = fgetc(archivo);
 			printf("%c", caracter);
+			*/
+			fscanf(archivo,"%d%s", &valor, &cadena);
+			printf("%d %s\n", valor, cadena);
 		}
 		
-		fclose(archivo);//cerrar archivo
-		printf("\nEl archivo se leyo correctamente: ");
+		printf("\n\nEl archivo se leyo correctamente: ");
 	}
+	
+	//EJEMPLO DE LECTURA POR 2 VARIABLES
+	//vamos a leer el archivo e irla guardando en una cadena de caracteres y en una variable de numeros
+/*
+	int valor;
+	char cadena[4];
+	while(feof(archivo) == 0){
+		fscanf(archivo,"%d%s", &valor, &cadena);
+		printf("%d %s\n", valor, cadena);
+	}
+		
+	printf("\n\nEl archivo se leyo correctamente: ");
+*/	
+	fclose(archivo);//cerrar archivo
 }
 
 
