@@ -8,6 +8,8 @@
 
 //https://youtu.be/PPK28h5TmHc
 
+//https://youtu.be/4Ob7tCFaMHw
+
 main(){
 	
 	//fopen() abre el archivo, y se guardara en un apuntador a esa dirección de memoria
@@ -36,12 +38,19 @@ main(){
 		int valor;
 		char cadena[4];
 		while(feof(archivo) == 0){
-			/*
 			caracter = fgetc(archivo);
 			printf("%c", caracter);
-			*/
+			
+			/*
+			
+				NO ME FUNCIONO, CREO QUE ES PORQUE TIENE QUE VER QUE EL FSCANF SE QUEDA COMO 
+				QUE "CONTENIENDO INFORMACIÓN" PERO USE LA FUNCION FFLUSH() PARA LIMPIAR EL BUFFER
+				PERO IGUAL NO FUNCIONA 
+				
+				
 			fscanf(archivo,"%d%s", &valor, &cadena);
 			printf("%d %s\n", valor, cadena);
+			*/
 		}
 		
 		printf("\n\nEl archivo se leyo correctamente: ");
