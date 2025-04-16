@@ -1,41 +1,35 @@
-México 1946
-Canadá 1837
-Panamá 1778
-Estados Unidos 1712
-Costa Rica 1668
-Jamaica 1552
-Honduras 1534
-Haití 1481
-Guatemala 1377
-Trinidad y Tobago 1360
-El Salvador 1243
-Surinam 1223
-Guadalupe 1222
-Martinica 1202
-Curazao 1130
-Nicaragua 1115
-Guyana 1069
-Cuba 1057
-República Dominicana 1050
-Guayana Francesa 950
-San Vicente y las Granadinas 892
-Bermudas 864
-Puerto Rico 846
-San Cristóbal y Nieves 833
-Belice 781
-Santa Lucía 774
-Granada 739
-Montserrat 690
-Dominica 622
-Sint Maarten 603
-Barbados 591
-Saint Martin 584
-Antigua y Barbuda 581
-Bonaire 554
-Aruba 520
-Islas Caimán 456
-Bahamas 427
-Islas Turcas y Caicos 272
-Islas Vírgenes Británicas 150
-Anguila 149
-Islas Vírgenes de EE. UU. 110
+Estados Unidos 1649
+México 1647
+Canadá 1532
+Panamá 1518
+Costa Rica 1459
+Jamaica 1387
+Honduras 1334
+El Salvador 1301
+Haití 1292
+Curazao 1265
+Trinidad y Tobago 1230
+Guatemala 1197
+Nicaragua 1114
+Surinam 1097
+República Dominicana 1087
+San Cristóbal y Nieves 1065
+Guyana 1038
+Puerto Rico 1019
+Antigua y Barbuda 1011
+Santa Lucía 986
+Cuba 980
+Bermudas 978
+San Vicente y las Granadinas 966
+Granada 954
+Barbados 933
+Belice 919
+Montserrat 914
+Dominica 900
+Islas Caimán 867
+Aruba 864
+Bahamas 819
+Islas Turcas y Caicos 804
+Islas Vírgenes Británicas 780
+Islas Vírgenes Estadounidenses 780
+Anguila 769
