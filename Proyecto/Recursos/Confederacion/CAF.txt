@@ -1,53 +1,53 @@
-Morocco 1694
+Marruecos 1694
 Senegal 1630
-Egypt 1519
-Algeria 1507
-Côte d'Ivoire 1487
+Egipto 1519
+Argelia 1507
+Costa de Marfil 1487
 Nigeria 1481
-Tunisia 1474
-Cameroon 1466
-Mali 1460
-South Africa 1445
-Congo DR 1407
+Túnez 1474
+Camerún 1466
+Malí 1460
+Sudáfrica 1445
+RD Congo 1407 (República Democrática del Congo)
 Burkina Faso 1385
 Cabo Verde 1344
 Ghana 1333
-Gabon 1310
+Gabón 1310
 Guinea 1293
 Angola 1280
 Zambia 1276
 Uganda 1274
-Equatorial Guinea 1256
-Benin 1240
+Guinea Ecuatorial 1256
+Benín 1240
 Mozambique 1239
-Comoros 1203
+Comoras 1203
 Tanzania 1196
 Namibia 1192
 Mauritania 1180
-Kenya 1179
-Sudan 1174
+Kenia 1179
+Sudán 1174
 Madagascar 1163
-Zimbabwe 1161
-Libya 1155
+Zimbabue 1161
+Libia 1155
 Togo 1149
-Niger 1143
-Sierra Leone 1140
+Níger 1143
+Sierra Leona 1140
 Congo 1136
-The Gambia 1133
-Guinea-Bissau 1128
-Rwanda 1127
-Malawi 1118
-Central African Republic 1102
-Botswana 1101
+Gambia 1133
+Guinea-Bisáu 1128
+Ruanda 1127
+Malaui 1118
+República Centroafricana 1102
+Botsuana 1101
 Burundi 1086
 Liberia 1068
-Ethiopia 1061
-Lesotho 1046
-Eswatini 1023
-South Sudan 976
+Etiopía 1061
+Lesoto 1046
+Suazilandia 1023 (Eswatini)
+Sudán del Sur 976
 Chad 925
-Mauritius 922
-Djibouti 866
-São Tomé and Príncipe 865
+Mauricio 922
+Yibuti 866
+Santo Tomé y Príncipe 865
 Somalia 832
 Seychelles 821
