@@ -5,7 +5,6 @@
 //proceso de abrir los documentos:
 void InicioClasificacion(){
 	//proceso de leer los archivos .txt donde estan la lista de los paises y su ranking fifa
-	
 	FILE *CONCA = fopen("Recursos/Confederacion/CONCACAF.txt", "r"); //america del norte
 	FILE *UEFA = fopen("Recursos/Confederacion/UEFA.txt", "r"); //Europa
 	FILE *CONME = fopen("Recursos/Confederacion/CONMEBOL.txt", "r"); //Sudamerica
