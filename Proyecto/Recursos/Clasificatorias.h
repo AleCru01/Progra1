@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h> //librería para definir la función Exit(1) y terminar el programa
 
+void definirCupos();
 void clasificacion(FILE *confederacion, int cupos, int playoffs);
+//defini el archivo donde voy a guardar todos los datos, como GLOBAL 
+FILE *PaisesCla;
+
 
 //proceso de abrir los documentos:
 void InicioClasificacion(){
@@ -13,7 +17,7 @@ void InicioClasificacion(){
 	FILE *CAF = fopen("Recursos/Confederacion/CAF.txt", "r"); //Africa
 	FILE *OFC = fopen("Recursos/Confederacion/OFC.txt", "r"); //Oceania
 	
-	FILE *PaisesCla = fopen("Recursos/PaisesFinales.txt", "w");
+	PaisesCla = fopen("Recursos/PaisesFinales.txt", "w");
 	
 	// Verificar si alguno no se abrió
 	
@@ -62,6 +66,10 @@ void clasificacion(FILE *confederacion, int cupos, int playoffs){
 		//los punteros FILE *confederación con FILE *CONCA pero tendría que pasarlo
 		//como parametro y ne, mjr este 3 porque igual CONCA solo tiene 3 cupos directos
 		
-		fprintf(PaisesCla, "Estados Unidos 1649\nMéxico 1647\nCanadá 1532");
+		fprintf(PaisesCla, "Estados Unidos 1649\nMexico 1647\nCanadá 1532");
 	}
+	
+	//aquí debo poner una función que pueda leerme todos los paises en un array
+	//para con esa información, con base a 2 arrays, pasarle de parametros 
+	//a una función que asigne los cupos
 }
