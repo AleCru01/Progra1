@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h> //librería para definir la función Exit(1) y terminar el programa
 
+void clasificacion(FILE *confederacion, int cupos, int playoffs);
 
 //proceso de abrir los documentos:
 void InicioClasificacion(){
@@ -11,6 +12,8 @@ void InicioClasificacion(){
 	FILE *AFC = fopen("Recursos/Confederacion/AFC.txt", "r"); //Asia 
 	FILE *CAF = fopen("Recursos/Confederacion/CAF.txt", "r"); //Africa
 	FILE *OFC = fopen("Recursos/Confederacion/OFC.txt", "r"); //Oceania
+	
+	FILE *PaisesCla = fopen("Recursos/PaisesFinales.txt", "w");
 	
 	// Verificar si alguno no se abrió
 	
@@ -28,9 +31,19 @@ void InicioClasificacion(){
     if (!OFC)   { printf("ARCHIVO FALTANTE: OFC.txt\n\n");       exit(1); }
 	
 	
-	int confederaciones[6] = {*CONCA, *UEFA, *CONME, *AFC,*CAF, *OFC};	
+	//es un array con las direcciones de memoria de los 6 archivos para pasarlo de parametro
+	FILE *confederaciones[6] = {CONCA, UEFA, CONME, AFC,CAF, OFC};	
 	
-	
+	/*tanto los cupos seguros y los playoffs se van a pasar
+	  como parametros en una funcions y aparte, estan acomodados
+	  como van en el arreglo *confederaciones
+	*/
+	int cuposSeguros[6] = {3,16,6,8,9,1}; 
+	int playoff[6] = {2,0,1,1,1,1};
+	int i;
+	for(i = 0; i<6; i++){
+		clasificacion(confederaciones[i], cuposSeguros[i], playoff[i]);
+	}
 	// cerrar los archivos al final:
     fclose(CONCA);
     fclose(UEFA);
@@ -38,4 +51,17 @@ void InicioClasificacion(){
     fclose(AFC);
     fclose(CAF);
     fclose(OFC);
+    fclose(PaisesCla);
+}
+
+
+void clasificacion(FILE *confederacion, int cupos, int playoffs){
+	if(cupos == 3){
+		//esta condición fue hecha para detectar si te estan pasando como parametro
+		//a la CONCACAF y agregarle directamente a los anfitriones, quería comparar 
+		//los punteros FILE *confederación con FILE *CONCA pero tendría que pasarlo
+		//como parametro y ne, mjr este 3 porque igual CONCA solo tiene 3 cupos directos
+		
+		fprintf(PaisesCla, "Estados Unidos 1649\nMéxico 1647\nCanadá 1532");
+	}
 }

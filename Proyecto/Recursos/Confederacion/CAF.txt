@@ -8,7 +8,7 @@ Túnez 1474
 Camerún 1466
 Malí 1460
 Sudáfrica 1445
-RD Congo 1407 (República Democrática del Congo)
+República Democrática del Congo 1407
 Burkina Faso 1385
 Cabo Verde 1344
 Ghana 1333
@@ -43,7 +43,7 @@ Burundi 1086
 Liberia 1068
 Etiopía 1061
 Lesoto 1046
-Suazilandia 1023 (Eswatini)
+Suazilandia 1023 
 Sudán del Sur 976
 Chad 925
 Mauricio 922
