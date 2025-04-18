@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h> //librería para definir la función Exit(1) y terminar el programa
+#include <stdlib.h> //librerÃ­a para definir la funciÃ³n Exit(1) y terminar el programa
 
 void definirCupos();
 void clasificacion(FILE *confederacion, int cupos, int playoffs);
@@ -19,10 +19,10 @@ void InicioClasificacion(){
 	
 	PaisesCla = fopen("Recursos/PaisesFinales.txt", "w");
 	
-	// Verificar si alguno no se abrió
+	// Verificar si alguno no se abriÃ³
 	
 	/*
-		FICHA TÉCNICA: 
+		FICHA TÃ‰CNICA: 
 			Use condicionales NEGATIVAS para verificar si algun documento no existe
 			basicamente: 
 			!CAF  -> es lo mismo a -> CAF == NULL
@@ -61,15 +61,42 @@ void InicioClasificacion(){
 
 void clasificacion(FILE *confederacion, int cupos, int playoffs){
 	if(cupos == 3){
-		//esta condición fue hecha para detectar si te estan pasando como parametro
-		//a la CONCACAF y agregarle directamente a los anfitriones, quería comparar 
-		//los punteros FILE *confederación con FILE *CONCA pero tendría que pasarlo
+		//esta condiciÃ³n fue hecha para detectar si te estan pasando como parametro
+		//a la CONCACAF y agregarle directamente a los anfitriones, querÃ­a comparar 
+		//los punteros FILE *confederaciÃ³n con FILE *CONCA pero tendrÃ­a que pasarlo
 		//como parametro y ne, mjr este 3 porque igual CONCA solo tiene 3 cupos directos
 		
-		fprintf(PaisesCla, "Estados Unidos 1649\nMexico 1647\nCanadá 1532");
+		fprintf(PaisesCla, "Estados Unidos 1649\nMexico 1647\nCanadÃ¡ 1532");
 	}
 	
-	//aquí debo poner una función que pueda leerme todos los paises en un array
-	//para con esa información, con base a 2 arrays, pasarle de parametros 
-	//a una función que asigne los cupos
+	//aquÃ­ debo poner una funciÃ³n que pueda leerme todos los paises en un array
+	//Prueba ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	void obtenerDatosConfederacion(FILE *confederacion, char ***nombres, int **rankings, int *cantidad) {
+    char buffer[100];
+    int contador = 0;
+    
+    // Contar lÃ­neas (paÃ­ses) en el archivo
+    while (fgets(buffer, sizeof(buffer), confederacion) != NULL) contador++;
+    rewind(confederacion);
+    
+    // Reservar memoria
+    *nombres = (char **)malloc(contador * sizeof(char *));
+    *rankings = (int *)malloc(contador * sizeof(int));
+    
+    // Leer y almacenar datos
+    for (int i = 0; i < contador; i++) {
+        fgets(buffer, sizeof(buffer), confederacion);
+        buffer[strcspn(buffer, "\n")] = '\0';
+        (*nombres)[i] = strdup(strtok(buffer, " "));
+        (*rankings)[i] = atoi(strtok(NULL, " "));
+    }
+    *cantidad = contador;
+}
+
+void liberarDatosConfederacion(char **nombres, int *rankings, int cantidad) {
+    for (int i = 0; i < cantidad; i++) free(nombres[i]);
+    free(nombres);
+    free(rankings);
+}
+	
 }
