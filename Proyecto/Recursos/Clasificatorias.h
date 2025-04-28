@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h> //librería para definir la función Exit(1) y terminar el programa
+#include <stdlib.h> //libreria para definir la funcion Exit(1) y terminar el programa
+#include "Recursos/Procesos.h" //Librer�a general para TODOS los procesos comunes 
 
 void definirCupos();
 void clasificacion(FILE *confederacion, int cupos, int playoffs);
@@ -19,10 +20,10 @@ void InicioClasificacion(){
 	
 	PaisesCla = fopen("Recursos/PaisesFinales.txt", "w");
 	
-	// Verificar si alguno no se abrió
+	// Verificar si alguno no se abria
 	
 	/*
-		FICHA TÉCNICA: 
+		FICHA TECNICA: 
 			Use condicionales NEGATIVAS para verificar si algun documento no existe
 			basicamente: 
 			!CAF  -> es lo mismo a -> CAF == NULL
@@ -38,7 +39,8 @@ void InicioClasificacion(){
 	//es un array con las direcciones de memoria de los 6 archivos para pasarlo de parametro
 	FILE *confederaciones[6] = {CONCA, UEFA, CONME, AFC,CAF, OFC};	
 	
-	/*tanto los cupos seguros y los playoffs se van a pasar
+	/*
+	  tanto los cupos seguros y los playoffs se van a pasar
 	  como parametros en una funcions y aparte, estan acomodados
 	  como van en el arreglo *confederaciones
 	*/
@@ -61,15 +63,15 @@ void InicioClasificacion(){
 
 void clasificacion(FILE *confederacion, int cupos, int playoffs){
 	if(cupos == 3){
-		//esta condición fue hecha para detectar si te estan pasando como parametro
-		//a la CONCACAF y agregarle directamente a los anfitriones, quería comparar 
-		//los punteros FILE *confederación con FILE *CONCA pero tendría que pasarlo
+		//esta condicion fue hecha para detectar si te estan pasando como parametro
+		//a la CONCACAF y agregarle directamente a los anfitriones, queria comparar 
+		//los punteros FILE *confederacion con FILE *CONCA pero tendria que pasarlo
 		//como parametro y ne, mjr este 3 porque igual CONCA solo tiene 3 cupos directos
 		
-		fprintf(PaisesCla, "Estados Unidos 1649\nMexico 1647\nCanadá 1532");
+		fprintf(PaisesCla, "Estados Unidos 1649\nMexico 1647\nCanada 1532");
 	}
 	
-	//aquí debo poner una función que pueda leerme todos los paises en un array
+	//aqui debo poner una funcion que pueda leerme todos los paises en un array
 	//Prueba ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	void obtenerDatosConfederacion(FILE *confederacion, char ***nombres, int **rankings, int *cantidad) {
     char buffer[100];

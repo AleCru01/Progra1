@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 
-
 ///Cuando llamen la funcion pongan el archivo como variable "*archivo= CONCA"
 void CONCACAF(FILE *archivo) {
     char a[1000]; 
@@ -92,7 +91,7 @@ void OFC1(FILE *archivo6) {
 
 int main() {
 	//Es un ejemplo solo de el primer archivo
-    FILE *CONCA = fopen("CONCACAF.txt", "r");
+    FILE *CONCA = fopen("Confederacion/CONCACAF.txt", "r");
 
     if (!CONCA) { 
         printf("ARCHIVO FALTANTE: CONCACAF.txt\n\n");
