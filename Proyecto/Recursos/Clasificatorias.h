@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h> //libreria para definir la funcion Exit(1) y terminar el programa
-#include "Recursos/Procesos.h" //Librería general para TODOS los procesos comunes 
+#include "Procesos.h" //Librería general para TODOS los procesos comunes 
 
 void definirCupos();
 void clasificacion(FILE *confederacion, int cupos, int playoffs);
@@ -71,34 +71,9 @@ void clasificacion(FILE *confederacion, int cupos, int playoffs){
 		fprintf(PaisesCla, "Estados Unidos 1649\nMexico 1647\nCanada 1532");
 	}
 	
-	//aqui debo poner una funcion que pueda leerme todos los paises en un array
-	//Prueba ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	void obtenerDatosConfederacion(FILE *confederacion, char ***nombres, int **rankings, int *cantidad) {
-    char buffer[100];
-    int contador = 0;
-    
-    // Contar lÃ­neas (paÃ­ses) en el archivo
-    while (fgets(buffer, sizeof(buffer), confederacion) != NULL) contador++;
-    rewind(confederacion);
-    
-    // Reservar memoria
-    *nombres = (char **)malloc(contador * sizeof(char *));
-    *rankings = (int *)malloc(contador * sizeof(int));
-    
-    // Leer y almacenar datos
-    for (int i = 0; i < contador; i++) {
-        fgets(buffer, sizeof(buffer), confederacion);
-        buffer[strcspn(buffer, "\n")] = '\0';
-        (*nombres)[i] = strdup(strtok(buffer, " "));
-        (*rankings)[i] = atoi(strtok(NULL, " "));
-    }
-    *cantidad = contador;
-}
-
-void liberarDatosConfederacion(char **nombres, int *rankings, int cantidad) {
-    for (int i = 0; i < cantidad; i++) free(nombres[i]);
-    free(nombres);
-    free(rankings);
-}
+	char **nombres = NULL;
+	int *rankings = NULL;
+	int cantidad = 0;
+	
 	
 }
