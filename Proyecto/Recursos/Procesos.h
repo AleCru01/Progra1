@@ -13,7 +13,7 @@
 //declaracion de funciones
 void obtenerDatosConfederacion(FILE *confederacion, char ***nombres, int **rankings, int *cantidad);
 void liberarDatosConfederacion(char **nombres, int *rankings, int cantidad);
-
+void obtenerDatosVictor(FILE *confederacion, char ***nombres, int **rankings, int *cantidad);
 
 
 void obtenerDatosConfederacion(FILE *confederacion, char ***nombres, int **rankings, int *cantidad) {
@@ -44,4 +44,17 @@ void liberarDatosConfederacion(char **nombres, int *rankings, int cantidad) {
     for (i = 0; i < cantidad; i++) free(nombres[i]);
     free(nombres);
     free(rankings);
+}
+
+
+void obtenerDatosVictor(FILE *confederacion, char ***nombres, int **rankings, int *cantidad){
+	int contador = 0, i;
+    char buffer[100];
+    // Contar líneas (países) en el archivo
+    while (fgets(buffer, sizeof(buffer), confederacion) != NULL) contador++;
+    rewind(confederacion);
+    
+    for(i = 0; i< contador; i++){
+    	fscanf(confederacion, "%s %d", &nombres[i], &rankings[i]);
+	}
 }

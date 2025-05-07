@@ -1,20 +1,20 @@
-Panamá 1518
+Panama 1518
 Costa Rica 1459
 Jamaica 1387
 Honduras 1334
 El Salvador 1301
-Haití 1292
+Haiti 1292
 Curazao 1265
 Trinidad y Tobago 1230
 Guatemala 1197
 Nicaragua 1114
 Surinam 1097
-República Dominicana 1087
-San Cristóbal y Nieves 1065
+Republica Dominicana 1087
+San Cristobal y Nieves 1065
 Guyana 1038
 Puerto Rico 1019
 Antigua y Barbuda 1011
-Santa Lucía 986
+Santa Lucia 986
 Cuba 980
 Bermudas 978
 San Vicente y las Granadinas 966
@@ -23,10 +23,10 @@ Barbados 933
 Belice 919
 Montserrat 914
 Dominica 900
-Islas Caimán 867
+Islas Caiman 867
 Aruba 864
 Bahamas 819
 Islas Turcas y Caicos 804
-Islas Vírgenes Británicas 780
-Islas Vírgenes Estadounidenses 780
+Islas Virgenes Britanicas 780
+Islas Virgenes Estadounidenses 780
 Anguila 769

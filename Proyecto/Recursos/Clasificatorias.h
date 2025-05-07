@@ -75,5 +75,13 @@ void clasificacion(FILE *confederacion, int cupos, int playoffs){
 	int *rankings = NULL;
 	int cantidad = 0;
 	
+	obtenerDatosVictor(confederacion, &nombres, &rankings, &cantidad);
+	
+	printf("Paises y Rankings \n\n");
+	int i;
+	for(i = 0; i<cantidad; i++){
+		printf("%s - %d \n", nombres[i], rankings[i]);
+	}
+	
 	
 }
