@@ -14,7 +14,7 @@
 void obtenerDatosConfederacion(FILE *confederacion, char ***nombres, int **rankings, int *cantidad);
 void liberarDatosConfederacion(char **nombres, int *rankings, int cantidad);
 void obtenerDatosVictor(FILE *confederacion, char ***nombres, int **rankings, int *cantidad);
-
+void sumatoria();
 
 void obtenerDatosConfederacion(FILE *confederacion, char ***nombres, int **rankings, int *cantidad) {
     char buffer[100];
@@ -48,6 +48,7 @@ void liberarDatosConfederacion(char **nombres, int *rankings, int cantidad) {
 
 
 void obtenerDatosVictor(FILE *confederacion, char ***nombres, int **rankings, int *cantidad){
+	//la neta no jalo w, no s� pq 
 	int contador = 0, i;
     char buffer[100];
     // Contar líneas (países) en el archivo

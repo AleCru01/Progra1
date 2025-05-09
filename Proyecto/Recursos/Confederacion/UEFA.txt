@@ -1,9 +1,9 @@
-España 1855
+Espana 1855
 Francia 1853
 Inglaterra 1819
-Países Bajos 1752
+Paises-Bajos 1752
 Portugal 1750
-Bélgica 1736
+Belgica 1736
 Italia 1718
 Alemania 1717
 Croacia 1699
@@ -11,15 +11,15 @@ Suiza 1625
 Dinamarca 1618
 Austria 1580
 Ucrania 1560
-Turquía 1551
+Turquia 1551
 Suecia 1536
 Gales 1536
 Serbia 1524
 Polonia 1517
 Rusia 1516
-Hungría 1503
+Hungria 1503
 Noruega 1497
-República Checa 1491
+Republica-Checa 1491
 Grecia 1490
 Escocia 1480
 Rumania 1479
@@ -27,11 +27,11 @@ Eslovaquia 1478
 Eslovenia 1463
 Irlanda 1412
 Albania 1376
-Macedonia del Norte 1376
+Macedonia-del-Norte 1376
 Georgia 1373
 Finlandia 1360
-Bosnia y Herzegovina 1351
-Irlanda del Norte 1349
+Bosnia-y-Herzegovina 1351
+Irlanda-del-Norte 1349
 Montenegro 1337
 Islandia 1337
 Israel 1322
@@ -40,16 +40,16 @@ Luxemburgo 1262
 Kosovo 1238
 Bielorrusia 1235
 Armenia 1208
-Kazajistán 1178
-Azerbaiyán 1151
+Kazajistan 1178
+Azerbaiyan 1151
 Estonia 1144
 Chipre 1128
 Letonia 1092
-Islas Feroe 1085
+Islas-Feroe 1085
 Lituania 1073
 Moldavia 1031
 Malta 976
 Andorra 957
 Gibraltar 843
 Liechtenstein 814
-San Marino 741
+San-Marino 741

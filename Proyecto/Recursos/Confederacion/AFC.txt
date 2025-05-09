@@ -1,46 +1,46 @@
-Japón 1653
-Irán 1637
-Corea del Sur 1575
+Japon 1653
+Iran 1637
+Corea-del-Sur 1575
 Australia 1555
 Catar 1457
-Uzbekistán 1437
-Arabia Saudita 1419
+Uzbekistan 1437
+Arabia-Saudita 1419
 Irak 1413
 Jordania 1389
-Emiratos Árabes Unidos 1383
-Omán 1324
-Baréin 1290
+Emiratos-Arabes-Unidos 1383
+Oman 1324
+Barein 1290
 Siria 1254
 China 1251
 Tailandia 1234
 Palestina 1225
-Kirguistán 1206
-Tayikistán 1203
+Kirguistan 1206
+Tayikistan 1203
 Vietnam 1184
-Líbano 1178
-Corea del Norte 1153
+Libano 1178
+Corea-del-Norte 1153
 Indonesia 1143
 India 1132
 Malasia 1124
 Kuwait 1112
-Turkmenistán 1076
+Turkmenistan 1076
 Filipinas 1063
-Hong Kong 1033
+Hong-Kong 1033
 Yemen 1018
-Afganistán 1008
+Afganistan 1008
 Singapur 1002
 Birmania 995
 Maldivas 986
-Taiwán 980
+Taiwan 980
 Nepal 936
 Camboya 913
-Bután 907
-Bangladés 904
-Brunéi 893
+Butan 907
+Banglades 904
+Brunei 893
 Mongolia 880
 Laos 876
 Macao 865
-Timor Oriental 840
-Pakistán 838
-Sri Lanka 834
+Timor-Oriental 840
+Pakistan 838
+Sri-Lanka 834
 Guam 823

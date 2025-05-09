@@ -1,11 +1,11 @@
-Nueva Zelanda 1285
-Islas Salomón 1046
+Nueva-Zelanda 1285
+Islas-Salomon 1046
 Fiyi 1043
-Nueva Caledonia 1040
-Tahití 1019
+Nueva-Caledonia 1040
+Tahiti 1019
 Vanuatu 992
-Papúa Nueva Guinea 969
-Samoa Americana 883
-Islas Cook 878
+Papua-Nueva-Guinea 969
+Samoa-Americana 883
+Islas-Cook 878
 Samoa 876
 Tonga 836
