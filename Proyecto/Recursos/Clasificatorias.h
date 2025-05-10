@@ -77,6 +77,7 @@ void clasificacion(FILE *confederacion, int cupos, int playoffs){
 	
 	obtenerDatosConfederacion(confederacion, &nombres, &rankings, &cantidad);
 	
+	
 	printf("Paises y Rankings \n\n");
 	int i;
 	for(i = 0; i<cantidad; i++){
