@@ -4,7 +4,7 @@
 	-SimuladorPartidos()
 	-probabilidad()
 	-etc
-*/
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,7 +20,7 @@ void obtenerDatosConfederacion(FILE *confederacion, char ***nombres, int **ranki
     char buffer[100];
     int contador = 0;
     
-    // Contar líneas (países) en el archivo
+    // Contar lÃ­neas (paÃ­ses) en el archivo
     while (fgets(buffer, sizeof(buffer), confederacion) != NULL) contador++;
     rewind(confederacion);
     
@@ -48,10 +48,10 @@ void liberarDatosConfederacion(char **nombres, int *rankings, int cantidad) {
 
 
 void obtenerDatosVictor(FILE *confederacion, char ***nombres, int **rankings, int *cantidad){
-	//la neta no jalo w, no s� pq 
+	//la neta no jalo w, no sé pq 
 	int contador = 0, i;
     char buffer[100];
-    // Contar líneas (países) en el archivo
+    // Contar lÃ­neas (paÃ­ses) en el archivo
     while (fgets(buffer, sizeof(buffer), confederacion) != NULL) contador++;
     rewind(confederacion);
     
@@ -59,3 +59,4 @@ void obtenerDatosVictor(FILE *confederacion, char ***nombres, int **rankings, in
     	fscanf(confederacion, "%s %d", &nombres[i], &rankings[i]);
 	}
 }
+*/
