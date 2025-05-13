@@ -68,7 +68,7 @@ void clasificacion(FILE *confederacion, int cupos, int playoffs){
 		//los punteros FILE *confederacion con FILE *CONCA pero tendria que pasarlo
 		//como parametro y ne, mjr este 3 porque igual CONCA solo tiene 3 cupos directos
 		
-		fprintf(PaisesCla, "Estados Unidos 1649\nMexico 1647\nCanada 1532");
+		fprintf(PaisesCla, "Estados Unidos 1649\nMexico 1647\nCanada 1532\n");
 	}
 	
 	char **nombres = NULL;
@@ -78,14 +78,14 @@ void clasificacion(FILE *confederacion, int cupos, int playoffs){
 	int PlayOff[playoffs];
 	
 	obtenerDatosConfederacion(confederacion, &nombres, &rankings, &cantidad);
-	printf("Paises y Rankings De la Confederacion\n\n");
+	printf("\nPaises y Rankings De la Confederacion\n\n");
 	int i;
 	for(i = 0; i<cantidad; i++){
 		printf("%s - %d \n", nombres[i], rankings[i]);
 	}
 	printf("\nEL numero de paises en esta confederacion es: %d\n", cantidad);
 	//ruleta
-	int i;
+	
 	long sumatoria=0;
 	for(i = 0; i<cantidad; i++){
 		sumatoria += rankings[i];
@@ -93,9 +93,21 @@ void clasificacion(FILE *confederacion, int cupos, int playoffs){
 	printf("Con una puntuacion total de: %ld\n", sumatoria);
 	printf("Esta tiene %d Cupos para el mundial\n", cupos);
 	printf("Con %d Lugares para repechaje\n", playoffs);
+	
+	//se que esto no se debe de hacer, pero voy a asignarle como todos los espacios en-1 a LugaresDirectos, pq así puedo garantizar que 
+	//al no estar definido el valor de cada punto, esta mal pero es la forma más rapido que pense
+	for(i = 0; i<cupos; i++){
+		LugaresDirectos[i] = -1;
+	}
 	for(i = 1; i<=cupos; i++){
-		sacarUnSelec();
+		LugaresDirectos[i] = sacarUnSelec(sumatoria, rankings, cantidad,LugaresDirectos, cupos);
+		//lo escribimos en el documento
+		fprintf(PaisesCla,"%s %d\n", nombres[LugaresDirectos[i]], rankings[LugaresDirectos[i]]);
+		//lo escribimos en pantalla
+		printf("---------------\n");
+		printf("Pais Clasificado: %s con ranking %d\n", nombres[LugaresDirectos[i]], rankings[LugaresDirectos[i]]);
 	}
 	
+	//vamos a escribir en pantalla y en el documento los cupos directos de cada confederacion
 	
 }
