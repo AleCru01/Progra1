@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h> //libreria para definir la funcion Exit(1) y terminar el programa
 #include "Procesos.h" //Librería general para TODOS los procesos comunes 
-
+#include <time.h>
 void definirCupos();
 void clasificacion(FILE *confederacion, int cupos, int playoffs);
 //defini el archivo donde voy a guardar todos los datos, como GLOBAL 
@@ -74,14 +74,28 @@ void clasificacion(FILE *confederacion, int cupos, int playoffs){
 	char **nombres = NULL;
 	int *rankings = NULL;
 	int cantidad = 0;
+	int LugaresDirectos[cupos]; 
+	int PlayOff[playoffs];
 	
 	obtenerDatosConfederacion(confederacion, &nombres, &rankings, &cantidad);
-	
-	
-	printf("Paises y Rankings \n\n");
+	printf("Paises y Rankings De la Confederacion\n\n");
 	int i;
 	for(i = 0; i<cantidad; i++){
 		printf("%s - %d \n", nombres[i], rankings[i]);
 	}
+	printf("\nEL numero de paises en esta confederacion es: %d\n", cantidad);
+	//ruleta
+	int i;
+	long sumatoria=0;
+	for(i = 0; i<cantidad; i++){
+		sumatoria += rankings[i];
+	}
+	printf("Con una puntuacion total de: %ld\n", sumatoria);
+	printf("Esta tiene %d Cupos para el mundial\n", cupos);
+	printf("Con %d Lugares para repechaje\n", playoffs);
+	for(i = 1; i<=cupos; i++){
+		sacarUnSelec();
+	}
+	
 	
 }

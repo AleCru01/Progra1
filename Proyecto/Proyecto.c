@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include "Recursos/Clasificatorias.h" //Librería propia para hacer las clasificatorias
+#include <stdlib.h>
+#include <time.h>
 
 int main(){
 	printf("oo____oo____oo____oooo____ooooooo___oo______oooooo__________oooo___oo______oo_ooooooo_______ooooo_____ooo_o____ooooo___oooooo__\n");
@@ -10,6 +12,7 @@ int main(){
 	printf("___oo____oo_______oooo____oo_____oo_ooooooo_oooooo__________oooo______oooo____oo__________oooooooo___oooo____oooooooo__oooooo__\n");
 	printf("_______________________________________________________________________________________________________________________________\n");
 	
+	srand(time(NULL)); 
 	int desicion;
 	printf("\n\nQuieres iniciar el mundial? (1.-Si / 2.-NO)");
 	scanf("%d", &desicion);
