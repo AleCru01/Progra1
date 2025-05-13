@@ -108,6 +108,10 @@ void clasificacion(FILE *confederacion, int cupos, int playoffs){
 		printf("Pais Clasificado: %s con ranking %d\n", nombres[LugaresDirectos[i]], rankings[LugaresDirectos[i]]);
 	}
 	
-	//vamos a escribir en pantalla y en el documento los cupos directos de cada confederacion
+	//FALTAN LOS REPECHAJES
+	
+	
+	liberarDatosConfederacion(nombres, rankings, cantidad);
+	
 	
 }

@@ -14,7 +14,7 @@ int main(){
 	
 	srand(time(NULL)); 
 	int desicion;
-	printf("\n\nQuieres iniciar el mundial? (1.-Si / 2.-NO)");
+	printf("\n\nQuieres iniciar el mundial? (1.-Si / 2.-NO)  ");
 	scanf("%d", &desicion);
 	if(desicion == 1){
 		InicioClasificacion();
