@@ -65,9 +65,10 @@ int sacarUnSelec(int rango, int array[], int cantidad, int Salidos[], int cupos)
 	
 	//si ya esta en los salidos, por mediode recursividad se volvera a ejecutar
 	//al parcer esto no funciona, hy que ver que pedo 
-	for(i = 0; i<cupos; i++){
-		if(indice == Salidos[cupos]){
-			sacarUnSelec(rango,array,cantidad,Salidos,cupos);
+	for(i = 0; i<=cupos; i++){
+		if(indice == Salidos[i]){
+			//RETORNAMOS UNA RECURSIVIDADA PARA QUE SE VUELVA A ELEGIR OTRO PAIS
+			return sacarUnSelec(rango,array,cantidad,Salidos,cupos);
 		}
 	}
 	

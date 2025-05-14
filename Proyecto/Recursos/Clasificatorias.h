@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h> //libreria para definir la funcion Exit(1) y terminar el programa
-#include "Procesos.h" //Librería general para TODOS los procesos comunes 
+#include "Procesos.h" //Librerï¿½a general para TODOS los procesos comunes 
 #include <time.h>
 void definirCupos();
 void clasificacion(FILE *confederacion, int cupos, int playoffs);
 //defini el archivo donde voy a guardar todos los datos, como GLOBAL 
 FILE *PaisesCla;
+FILE *PaisesRepechaje;
 
 
 //proceso de abrir los documentos:
@@ -18,7 +19,9 @@ void InicioClasificacion(){
 	FILE *CAF = fopen("Recursos/Confederacion/CAF.txt", "r"); //Africa
 	FILE *OFC = fopen("Recursos/Confederacion/OFC.txt", "r"); //Oceania
 	
+	//archivo paises clasi
 	PaisesCla = fopen("Recursos/PaisesFinales.txt", "w");
+	PaisesRepechaje = fopen("Recursos/Repechaje.txt", "w");
 	
 	// Verificar si alguno no se abria
 	
@@ -94,22 +97,22 @@ void clasificacion(FILE *confederacion, int cupos, int playoffs){
 	printf("Esta tiene %d Cupos para el mundial\n", cupos);
 	printf("Con %d Lugares para repechaje\n", playoffs);
 	
-	//se que esto no se debe de hacer, pero voy a asignarle como todos los espacios en-1 a LugaresDirectos, pq así puedo garantizar que 
-	//al no estar definido el valor de cada punto, esta mal pero es la forma más rapido que pense
+	//se que esto no se debe de hacer, pero voy a asignarle como todos los espacios en-1 a LugaresDirectos, pq asï¿½ puedo garantizar que 
+	//al no estar definido el valor de cada punto, esta mal pero es la forma mï¿½s rapido que pense
 	for(i = 0; i<cupos; i++){
 		LugaresDirectos[i] = -1;
 	}
-	for(i = 1; i<=cupos; i++){
+	for(i = 0; i<cupos; i++){
 		LugaresDirectos[i] = sacarUnSelec(sumatoria, rankings, cantidad,LugaresDirectos, cupos);
 		//lo escribimos en el documento
 		fprintf(PaisesCla,"%s %d\n", nombres[LugaresDirectos[i]], rankings[LugaresDirectos[i]]);
 		//lo escribimos en pantalla
 		printf("---------------\n");
 		printf("Pais Clasificado: %s con ranking %d\n", nombres[LugaresDirectos[i]], rankings[LugaresDirectos[i]]);
+		sumatoria -= rankings[LugaresDirectos[i]];
 	}
 	
 	//FALTAN LOS REPECHAJES
-	
 	
 	liberarDatosConfederacion(nombres, rankings, cantidad);
 	
