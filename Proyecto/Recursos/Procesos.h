@@ -11,28 +11,65 @@
 #include <string.h>
 #include <time.h>
 
+// ----------------------------
+// ESTRUCTURA NUEVA AÑADIDA
+// ----------------------------
+typedef struct {
+    char nombre[50];  // Nombre del equipo
+    int ranking_fifa; // Ranking FIFA
+} Equipo;
 
-//declaracion de funciones
+// ----------------------------
+// DECLARACIONES ORIGINALES (se mantienen)
+// ----------------------------
 void obtenerDatosConfederacion(FILE *confederacion, char ***nombres, int **rankings, int *cantidad);
 void liberarDatosConfederacion(char **nombres, int *rankings, int cantidad);
 void obtenerDatosVictor(FILE *confederacion, char ***nombres, int **rankings, int *cantidad);
 int sacarUnSelec(int rango, int array[], int cantidad,int Salidos[], int cupos);
 
-//INICIO DE PROCESOS
+// ----------------------------
+// FUNCIONES NUEVAS AÑADIDAS
+// ----------------------------
+void cargarEquiposArray(FILE *archivo, Equipo **arrayEquipos, int *total) {
+    char buffer[100];
+    int contador = 0;
+    
+    // Contar líneas en archivo
+    while (fgets(buffer, sizeof(buffer), archivo)) contador++;
+    rewind(archivo);
+    
+    // Crear array de estructuras
+    *arrayEquipos = (Equipo*)malloc(contador * sizeof(Equipo));
+    
+    // Leer datos
+    for (int i = 0; i < contador; i++) {
+        fgets(buffer, sizeof(buffer), archivo);
+        buffer[strcspn(buffer, "\n")] = '\0';
+        sscanf(buffer, "%49s %d", (*arrayEquipos)[i].nombre, &(*arrayEquipos)[i].ranking_fifa);
+    }
+    *total = contador;
+}
 
+void mostrarArrayEquipos(Equipo *array, int total) {
+    printf("\n--- EQUIPOS EN ARRAY DE STRUCT ---\n");
+    for (int i = 0; i < total; i++) {
+        printf("%-20s (Rank: %d)\n", array[i].nombre, array[i].ranking_fifa);
+    }
+}
+
+// ----------------------------
+// FUNCIONES ORIGINALES (se mantienen exactamente igual)
+// ----------------------------
 void obtenerDatosConfederacion(FILE *confederacion, char ***nombres, int **rankings, int *cantidad) {
     char buffer[100];
     int contador = 0;
     
-    // Contar lÃ­neas (paÃ­ses) en el archivo
     while (fgets(buffer, sizeof(buffer), confederacion) != NULL) contador++;
     rewind(confederacion);
     
-    // Reservar memoria
     *nombres = (char **)malloc(contador * sizeof(char *));
     *rankings = (int *)malloc(contador * sizeof(int));
     
-    // Leer y almacenar datos
     int i; 
     for (i = 0; i < contador; i++) {
         fgets(buffer, sizeof(buffer), confederacion);
@@ -44,33 +81,28 @@ void obtenerDatosConfederacion(FILE *confederacion, char ***nombres, int **ranki
 }
 
 void liberarDatosConfederacion(char **nombres, int *rankings, int cantidad) {
-	int i; 
+    int i; 
     for (i = 0; i < cantidad; i++) free(nombres[i]);
     free(nombres);
     free(rankings);
 }
 
-
 int sacarUnSelec(int rango, int array[], int cantidad, int Salidos[], int cupos){
-	long numero = 1 + rand() % rango;
-	
-	//vamos a buscarlo en el array
-	long acumulado = 0;
-	int i = 0;
-	int indice = 0;
-	do{
-		indice++; 
-		acumulado +=array[indice];
-	}while(acumulado <= numero);
-	
-	//si ya esta en los salidos, por mediode recursividad se volvera a ejecutar
-	//al parcer esto no funciona, hy que ver que pedo 
-	for(i = 0; i<=cupos; i++){
-		if(indice == Salidos[i]){
-			//RETORNAMOS UNA RECURSIVIDADA PARA QUE SE VUELVA A ELEGIR OTRO PAIS
-			return sacarUnSelec(rango,array,cantidad,Salidos,cupos);
-		}
-	}
-	
-	return indice;
+    long numero = 1 + rand() % rango;
+    
+    long acumulado = 0;
+    int i = 0;
+    int indice = 0;
+    do{
+        indice++; 
+        acumulado +=array[indice];
+    }while(acumulado <= numero);
+    
+    for(i = 0; i<=cupos; i++){
+        if(indice == Salidos[i]){
+            return sacarUnSelec(rango,array,cantidad,Salidos,cupos);
+        }
+    }
+    
+    return indice;
 }
