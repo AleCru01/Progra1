@@ -105,4 +105,86 @@ int sacarUnSelec(int rango, int array[], int cantidad, int Salidos[], int cupos)
     }
     
     return indice;
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
+typedef struct {
+    char nombre[50];
+    int ranking_fifa;
+} Equipo;
+
+// Función para calcular probabilidad de empate
+float probabilidad_empate(int ranking1, int ranking2) {
+    if (ranking1 <= 0 || ranking2 <= 0) return 0.0f; // Evitar división por cero
+    int menor = (ranking1 < ranking2) ? ranking1 : ranking2;
+    return (float)menor / ((ranking1 > ranking2) ? ranking1 : ranking2);
+}
+
+// Función para simular partido
+void partido(Equipo local, Equipo visitante) {
+    srand(time(NULL));
+    float prob_empate = probabilidad_empate(local.ranking_fifa, visitante.ranking_fifa);
+    float prob_local = (1.0f - prob_empate) * (visitante.ranking_fifa / (float)(local.ranking_fifa + visitante.ranking_fifa));
+    float prob_visitante = 1.0f - prob_empate - prob_local;
+
+    float resultado = (float)rand() / RAND_MAX;
+
+    printf("\n--- SIMULACIÓN ---\n");
+    printf("%s (%d) vs %s (%d)\n", local.nombre, local.ranking_fifa, visitante.nombre, visitante.ranking_fifa);
+    printf("Probabilidades:\n");
+    printf("- Victoria %s: %.2f%%\n", local.nombre, prob_local * 100);
+    printf("- Empate: %.2f%%\n", prob_empate * 100);
+    printf("- Victoria %s: %.2f%%\n", visitante.nombre, prob_visitante * 100);
+
+    if (resultado < prob_local) {
+        printf("\nResultado: Gana %s\n", local.nombre);
+    } else if (resultado < prob_local + prob_empate) {
+        printf("\nResultado: Empate\n");
+    } else {
+        printf("\nResultado: Gana %s\n", visitante.nombre);
+    }
+}
+
+// Función original para cargar datos desde archivo
+void cargarEquiposArray(FILE *archivo, Equipo **arrayEquipos, int *total) {
+    char buffer[100];
+    int contador = 0;
+    while (fgets(buffer, sizeof(buffer), archivo)) contador++;
+    rewind(archivo);
+    *arrayEquipos = (Equipo*)malloc(contador * sizeof(Equipo));
+    for (int i = 0; i < contador; i++) {
+        fgets(buffer, sizeof(buffer), archivo);
+        buffer[strcspn(buffer, "\n")] = '\0';
+        sscanf(buffer, "%49s %d", (*arrayEquipos)[i].nombre, &(*arrayEquipos)[i].ranking_fifa);
+    }
+    *total = contador;
+}
+
+// Ejemplo de uso integrado
+int main() {
+    FILE *archivo = fopen("equipos.txt", "r");
+    if (!archivo) {
+        perror("Error al abrir el archivo");
+        return 1;
+    }
+
+    Equipo *equipos;
+    int totalEquipos;
+    cargarEquiposArray(archivo, &equipos, &totalEquipos);
+    fclose(archivo);
+
+    // Simular un partido entre el primer y segundo equipo del archivo
+    if (totalEquipos >= 2) {
+        partido(equipos[0], equipos[1]);
+    }
+
+    free(equipos);
+    return 0;
+}
+	
 }
