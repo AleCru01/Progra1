@@ -97,22 +97,35 @@ void clasificacion(FILE *confederacion, int cupos, int playoffs){
 	printf("Esta tiene %d Cupos para el mundial\n", cupos);
 	printf("Con %d Lugares para repechaje\n", playoffs);
 	
-	//se que esto no se debe de hacer, pero voy a asignarle como todos los espacios en-1 a LugaresDirectos, pq as� puedo garantizar que 
-	//al no estar definido el valor de cada punto, esta mal pero es la forma m�s rapido que pense
+	//se que esto no se debe de hacer, pero voy a asignarle como todos los espacios en-1 a LugaresDirectos, pq asi puedo garantizar que 
+	//al no estar definido el valor de cada punto, esta mal pero es la forma mas rapido que pense
 	for(i = 0; i<cupos; i++){
 		LugaresDirectos[i] = -1;
+		if(i < playoffs){
+			//hago el mismo proceso de poner en -1 como indefinido
+			PlayOff[i] = -1; 
+		}
 	}
 	for(i = 0; i<cupos; i++){
-		LugaresDirectos[i] = sacarUnSelec(sumatoria, rankings, cantidad,LugaresDirectos, cupos);
+		LugaresDirectos[i] = sacarUnSelec(sumatoria, rankings, cantidad,LugaresDirectos, cupos,PlayOff, playoffs);
 		//lo escribimos en el documento
 		fprintf(PaisesCla,"%s %d\n", nombres[LugaresDirectos[i]], rankings[LugaresDirectos[i]]);
 		//lo escribimos en pantalla
 		printf("---------------\n");
 		printf("Pais Clasificado: %s con ranking %d\n", nombres[LugaresDirectos[i]], rankings[LugaresDirectos[i]]);
 		sumatoria -= rankings[LugaresDirectos[i]];
+		
 	}
 	
 	//FALTAN LOS REPECHAJES
+	for(i = 0; i<playoffs; i++){
+		//mando a llamar la funcion de sacar un selec
+		PlayOff[i] = sacarUnSelec(sumatoria, rankings,cantidad, LugaresDirectos,playoffs,PlayOff, playoffs);
+			//lo escribimos en el documento
+		fprintf(PaisesRepechaje,"%s %d\n", nombres[PlayOff[i]], rankings[PlayOff[i]]);
+		printf("Pais Clasificado para repechaje: %s con ranking %d\n", nombres[PlayOff[i]], rankings[PlayOff[i]]);
+		sumatoria -= rankings[PlayOff[i]];
+	}
 	
 	liberarDatosConfederacion(nombres, rankings, cantidad);
 	

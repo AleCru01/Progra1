@@ -1,9 +1,9 @@
-Argentina 1886
+Peru 1483
 Brazil 1776
 Uruguay 1679
 Colombia 1679
 Ecuador 1568
-Peru 1483
+Argentina 1886
 Venezuela 1477
 Paraguay 1476
 Chile 1462

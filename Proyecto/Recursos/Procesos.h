@@ -25,7 +25,7 @@ typedef struct {
 void obtenerDatosConfederacion(FILE *confederacion, char ***nombres, int **rankings, int *cantidad);
 void liberarDatosConfederacion(char **nombres, int *rankings, int cantidad);
 void obtenerDatosVictor(FILE *confederacion, char ***nombres, int **rankings, int *cantidad);
-int sacarUnSelec(int rango, int array[], int cantidad,int Salidos[], int cupos);
+int sacarUnSelec(int rango, int array[], int cantidad,int Salidos[], int cupos, int repe[],int CuposPlayoff);
 
 // ----------------------------
 // FUNCIONES NUEVAS AÑADIDAS
@@ -42,7 +42,8 @@ void cargarEquiposArray(FILE *archivo, Equipo **arrayEquipos, int *total) {
     *arrayEquipos = (Equipo*)malloc(contador * sizeof(Equipo));
     
     // Leer datos
-    for (int i = 0; i < contador; i++) {
+    int i;
+    for (i = 0; i < contador; i++) {
         fgets(buffer, sizeof(buffer), archivo);
         buffer[strcspn(buffer, "\n")] = '\0';
         sscanf(buffer, "%49s %d", (*arrayEquipos)[i].nombre, &(*arrayEquipos)[i].ranking_fifa);
@@ -52,7 +53,8 @@ void cargarEquiposArray(FILE *archivo, Equipo **arrayEquipos, int *total) {
 
 void mostrarArrayEquipos(Equipo *array, int total) {
     printf("\n--- EQUIPOS EN ARRAY DE STRUCT ---\n");
-    for (int i = 0; i < total; i++) {
+    int i;
+    for (i = 0; i < total; i++) {
         printf("%-20s (Rank: %d)\n", array[i].nombre, array[i].ranking_fifa);
     }
 }
@@ -86,8 +88,8 @@ void liberarDatosConfederacion(char **nombres, int *rankings, int cantidad) {
     free(nombres);
     free(rankings);
 }
-
-int sacarUnSelec(int rango, int array[], int cantidad, int Salidos[], int cupos){
+//(rango = sumatoia, array = array de todos los rankings, cantidad = no. de paises, Salidos = array de los que ya salieron, cupos = cupos, repe[] = array de los repechaje, CuposPlayoffs = los cupos para play offs
+int sacarUnSelec(int rango, int array[], int cantidad, int Salidos[], int cupos, int repe[], int CuposPlayoff){
     long numero = 1 + rand() % rango;
     
     long acumulado = 0;
@@ -100,9 +102,14 @@ int sacarUnSelec(int rango, int array[], int cantidad, int Salidos[], int cupos)
     
     for(i = 0; i<=cupos; i++){
         if(indice == Salidos[i]){
-            return sacarUnSelec(rango,array,cantidad,Salidos,cupos);
+            return sacarUnSelec(rango,array,cantidad,Salidos,cupos,repe, CuposPlayoff);
         }
+        
     }
-    
+    for (i = 0; i < CuposPlayoff; i++) {
+  	  if (indice == repe[i]) {
+		return sacarUnSelec(rango,array,cantidad,Salidos,cupos,repe, CuposPlayoff);
+  	  }
+	}	
     return indice;
 }

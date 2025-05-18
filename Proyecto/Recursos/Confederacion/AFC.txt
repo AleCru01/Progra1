@@ -1,4 +1,4 @@
-Japon 1653
+Palestina 1225
 Iran 1637
 Corea-del-Sur 1575
 Australia 1555
@@ -13,7 +13,7 @@ Barein 1290
 Siria 1254
 China 1251
 Tailandia 1234
-Palestina 1225
+Japon 1653
 Kirguistan 1206
 Tayikistan 1203
 Vietnam 1184
