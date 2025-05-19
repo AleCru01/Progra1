@@ -166,7 +166,7 @@ void repechaje(){
 	for(i = 0; i<cantidad; i++){
 		sumatoria += rankings[i];
 	}
-	
+	/*
 	//Sacamos el 1er Pais
 	paises[0] = sacarUnSelec(sumatoria, rankings,cantidad, paises,1,NULL, 0);
 	sumatoria -= rankings[paises[0]];
@@ -178,4 +178,5 @@ void repechaje(){
 	sumatoria -= rankings[paises[1]];
 	printf("El 48vo pais en clasificar es: %s con %d puntos de ranking\n", nombres[paises[1]], rankings[paises[1]]);
     //rankings[paises[1]] = 0;
+    */
 }
