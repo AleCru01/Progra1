@@ -18,6 +18,7 @@ int main(){
 	scanf("%d", &desicion);
 	if(desicion == 1){
 		InicioClasificacion();
+		repechaje();
 	}else{
 		return 1;
 	}

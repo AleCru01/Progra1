@@ -4,6 +4,7 @@
 #include <time.h>
 void definirCupos();
 void clasificacion(FILE *confederacion, int cupos, int playoffs);
+void repechaje(); //para sacar 2 paises de repechaje 
 //defini el archivo donde voy a guardar todos los datos, como GLOBAL 
 FILE *PaisesCla;
 FILE *PaisesRepechaje;
@@ -134,6 +135,20 @@ void clasificacion(FILE *confederacion, int cupos, int playoffs){
 	}
 	
 	liberarDatosConfederacion(nombres, rankings, cantidad);
+}
+
+
+
+void repechaje(){
+	//abrimos el archivo para leer
+	PaisesRepechaje = fopen("Recursos/Repechaje.txt", "r");
+	
+	//guardamos los paises:
+	char **nombres = NULL;
+	int *rankings = NULL;
+	int cantidad = 0;
+	//obtenemos los datos
+	obtenerDatosConfederacion(PaisesRepechaje, &nombres, &rankings, &cantidad);
 	
 	
 }
