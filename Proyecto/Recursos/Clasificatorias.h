@@ -62,6 +62,7 @@ void InicioClasificacion(){
     fclose(CAF);
     fclose(OFC);
     fclose(PaisesCla);
+    fclose(PaisesRepechaje);
 }
 
 
@@ -140,6 +141,12 @@ void clasificacion(FILE *confederacion, int cupos, int playoffs){
 
 
 void repechaje(){
+	
+	printf("*********************\n");
+	printf("* FASE DE REPECHAJE *\n");
+	printf("*********************\n\n\n");
+	
+	
 	//abrimos el archivo para leer
 	PaisesRepechaje = fopen("Recursos/Repechaje.txt", "r");
 	
@@ -147,8 +154,28 @@ void repechaje(){
 	char **nombres = NULL;
 	int *rankings = NULL;
 	int cantidad = 0;
+	int i;
 	//obtenemos los datos
 	obtenerDatosConfederacion(PaisesRepechaje, &nombres, &rankings, &cantidad);
+	//cerramos el archivo
+	fclose(PaisesRepechaje);
 	
+	int paises[2] = {-1, -1}; //son solo 2 paises para sacar y tenemos que poner todos los elementos en -1 para que no haya una comparacion ya existente
+	//scamos la sumatoria
+	long sumatoria=0;
+	for(i = 0; i<cantidad; i++){
+		sumatoria += rankings[i];
+	}
 	
+	//Sacamos el 1er Pais
+	paises[0] = sacarUnSelec(sumatoria, rankings,cantidad, paises,1,NULL, 0);
+	sumatoria -= rankings[paises[0]];
+	printf("El 47vo pais en clasificar es: %s con %d puntos de ranking\n", nombres[paises[0]], rankings[paises[0]]);
+    //rankings[paises[0]] = 0;
+    
+	//sacamos el 2ndo pais
+	paises[1] = sacarUnSelec(sumatoria, rankings,cantidad, paises,1,NULL, 0);
+	sumatoria -= rankings[paises[1]];
+	printf("El 48vo pais en clasificar es: %s con %d puntos de ranking\n", nombres[paises[1]], rankings[paises[1]]);
+    //rankings[paises[1]] = 0;
 }
