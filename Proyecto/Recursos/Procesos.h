@@ -91,16 +91,17 @@ void liberarDatosConfederacion(char **nombres, int *rankings, int cantidad) {
 //(rango = sumatoia, array = array de todos los rankings, cantidad = no. de paises, Salidos = array de los que ya salieron, cupos = cupos, repe[] = array de los repechaje, CuposPlayoffs = los cupos para play offs
 int sacarUnSelec(int rango, int array[], int cantidad, int Salidos[], int cupos, int repe[], int CuposPlayoff){
     long numero = 1 + rand() % rango;
-    
+    //sacamos un numero aleatorio y un acoumulado
     long acumulado = 0;
     int i = 0;
-    int indice = 0;
+    //variable de 
+    int indice = -1;
     do{
         indice++; 
         acumulado +=array[indice];
     }while(acumulado <= numero);
     
-    for(i = 0; i<=cupos; i++){
+    for(i = 0; i<cupos; i++){
         if(indice == Salidos[i]){
             return sacarUnSelec(rango,array,cantidad,Salidos,cupos,repe, CuposPlayoff);
         }
@@ -112,18 +113,10 @@ int sacarUnSelec(int rango, int array[], int cantidad, int Salidos[], int cupos,
   	  }
 	}	
     return indice;
+}
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-
-typedef struct {
-    char nombre[50];
-    int ranking_fifa;
-} Equipo;
 
 // Función para calcular probabilidad de empate
 float probabilidad_empate(int ranking1, int ranking2) {
@@ -157,6 +150,7 @@ void partido(Equipo local, Equipo visitante) {
     }
 }
 
+/*
 // Función original para cargar datos desde archivo
 void cargarEquiposArray(FILE *archivo, Equipo **arrayEquipos, int *total) {
     char buffer[100];
@@ -164,15 +158,16 @@ void cargarEquiposArray(FILE *archivo, Equipo **arrayEquipos, int *total) {
     while (fgets(buffer, sizeof(buffer), archivo)) contador++;
     rewind(archivo);
     *arrayEquipos = (Equipo*)malloc(contador * sizeof(Equipo));
-    for (int i = 0; i < contador; i++) {
+    int i;
+    for (i = 0; i < contador; i++) {
         fgets(buffer, sizeof(buffer), archivo);
         buffer[strcspn(buffer, "\n")] = '\0';
         sscanf(buffer, "%49s %d", (*arrayEquipos)[i].nombre, &(*arrayEquipos)[i].ranking_fifa);
     }
     *total = contador;
 }
-
-// Ejemplo de uso integrado
+*/
+/* Ejemplo de uso integrado
 int main() {
     FILE *archivo = fopen("equipos.txt", "r");
     if (!archivo) {
@@ -193,5 +188,5 @@ int main() {
     free(equipos);
     return 0;
 }
-	
-}
+
+}*/

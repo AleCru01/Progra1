@@ -86,6 +86,7 @@ void clasificacion(FILE *confederacion, int cupos, int playoffs){
 	for(i = 0; i<cantidad; i++){
 		printf("%s - %d \n", nombres[i], rankings[i]);
 	}
+	printf("\n***************************************************");
 	printf("\nEL numero de paises en esta confederacion es: %d\n", cantidad);
 	//ruleta
 	
@@ -96,7 +97,7 @@ void clasificacion(FILE *confederacion, int cupos, int playoffs){
 	printf("Con una puntuacion total de: %ld\n", sumatoria);
 	printf("Esta tiene %d Cupos para el mundial\n", cupos);
 	printf("Con %d Lugares para repechaje\n", playoffs);
-	
+	printf("***************************************************\n");
 	//se que esto no se debe de hacer, pero voy a asignarle como todos los espacios en-1 a LugaresDirectos, pq asi puedo garantizar que 
 	//al no estar definido el valor de cada punto, esta mal pero es la forma mas rapido que pense
 	for(i = 0; i<cupos; i++){
@@ -106,22 +107,27 @@ void clasificacion(FILE *confederacion, int cupos, int playoffs){
 			PlayOff[i] = -1; 
 		}
 	}
+	printf("\n\nCLASIFICADOS: \n");
+	printf("_______________________\n");
 	for(i = 0; i<cupos; i++){
 		LugaresDirectos[i] = sacarUnSelec(sumatoria, rankings, cantidad,LugaresDirectos, cupos,PlayOff, playoffs);
+		
 		//lo escribimos en el documento
 		fprintf(PaisesCla,"%s %d\n", nombres[LugaresDirectos[i]], rankings[LugaresDirectos[i]]);
 		//lo escribimos en pantalla
-		printf("---------------\n");
 		printf("Pais Clasificado: %s con ranking %d\n", nombres[LugaresDirectos[i]], rankings[LugaresDirectos[i]]);
 		sumatoria -= rankings[LugaresDirectos[i]];
 		
 	}
 	
+	printf("\nPLAYOFFS: \n");
+	printf("______________\n");
 	//FALTAN LOS REPECHAJES
 	for(i = 0; i<playoffs; i++){
 		//mando a llamar la funcion de sacar un selec
 		PlayOff[i] = sacarUnSelec(sumatoria, rankings,cantidad, LugaresDirectos,playoffs,PlayOff, playoffs);
-			//lo escribimos en el documento
+		
+		//lo escribimos en el documento
 		fprintf(PaisesRepechaje,"%s %d\n", nombres[PlayOff[i]], rankings[PlayOff[i]]);
 		printf("Pais Clasificado para repechaje: %s con ranking %d\n", nombres[PlayOff[i]], rankings[PlayOff[i]]);
 		sumatoria -= rankings[PlayOff[i]];
