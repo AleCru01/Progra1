@@ -31,7 +31,7 @@ void obtenerDatosConfederacion(FILE *confederacion, char ***nombres, int **ranki
 
 struct Grupos{
 	int idGrupo;
-	char **nombres;
+	char **nombres; //4 paises
 	int *rankings;
 	int *puntos;
 };
