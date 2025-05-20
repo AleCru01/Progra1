@@ -22,6 +22,16 @@ void obtenerDatosConfederacion(FILE *confederacion, char ***nombres, int **ranki
     *cantidad = contador;
 }
 
+int sacarUnNumero(int usados[]) {
+    int num;
+
+    do {
+        num = rand() % 48;
+    } while (usados[num]); // si ya fue usado, sigue buscando
+
+    usados[num] = 1; // marcar como usado
+    return num;
+}
 
 struct Grupo {
 	//ponemos 4 pq son 4 equipos alv
@@ -30,39 +40,6 @@ struct Grupo {
     int rankings[4];
     int puntos[4];
 };
-
-void crearGrupos(struct Grupo grupos[], const char *archivo) {
-    FILE *fp = fopen(archivo, "r");
-    if (!fp) {
-        printf("Error al abrir el archivo %s\n", archivo);
-        exit(1);
-    }
-
-    char buffer[100];
-    int grupoActual = 0;
-    int posicion = 0;
-
-    while (fgets(buffer, sizeof(buffer), fp) != NULL) {
-
-        buffer[strcspn(buffer, "\n")] = '\0'; // quitar el salto de línea
-        char *nombre = strtok(buffer, " ");
-        char *rankingStr = strtok(NULL, " ");
-
-        grupos[grupoActual].nombres[posicion] = strdup(nombre);
-        grupos[grupoActual].rankings[posicion] = atoi(rankingStr);
-        grupos[grupoActual].puntos[posicion] = 0;
-
-        posicion++;
-
-        if (posicion == 4) {
-            grupos[grupoActual].idGrupo = grupoActual + 1;
-            grupoActual++;
-            posicion = 0;
-        }
-    }
-
-    fclose(fp);
-}
 
 void imprimirGrupos(struct Grupo grupos[]) {
     for (int i = 0; i < 12; i++) {
@@ -81,11 +58,22 @@ int main() {
     FILE *archivo = fopen("UEFA.txt", "r");
     //Obtener datos: 
     char **nombres;
-    int **ranking;
+    int *rankings;
     int cantidad = 0;
+    int i, j;
     obtenerDatosConfederacion(archivo, &nombres, &rankings, &cantidad);
     
-    crearGrupos(grupos, "UEFA.txt");
+    int usados[48] = {0};  // inicializar todos en 0
+
+	for(i = 0; i < 12; i++) {
+	    for(j = 0; j < 4; j++) {
+	        int num = sacarUnNumero(usados);
+	        grupos[i].nombres[j] = strdup(nombres[num]); 
+	        grupos[i].rankings[j] = rankings[num]; 
+	        grupos[i].puntos[j] = 0;
+	    }
+	}
+    
     imprimirGrupos(grupos);
 
     // Liberar memoria usada para nombres
@@ -94,7 +82,9 @@ int main() {
             free(grupos[i].nombres[j]);
         }
     }
-
+	 for (i = 0; i < cantidad; i++) free(nombres[i]);
+    free(nombres);
+    free(rankings);
     return 0;
 }
 
