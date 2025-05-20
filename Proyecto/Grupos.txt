@@ -1,60 +1,60 @@
-Grupo A
-  Camerun - 0 puntos (ranking: 1466)
-  Inglaterra - 0 puntos (ranking: 1819)
-  Siria - 0 puntos (ranking: 1254)
-  Colombia - 0 puntos (ranking: 1679)
-Grupo B
-  Vietnam - 0 puntos (ranking: 1184)
-  Ecuador - 0 puntos (ranking: 1568)
-  Santa-Lucia - 0 puntos (ranking: 986)
-  Turquia - 0 puntos (ranking: 1551)
-Grupo C
-  Malasia - 0 puntos (ranking: 1124)
-  Costa-de-Marfil - 0 puntos (ranking: 1487)
-  Egipto - 0 puntos (ranking: 1519)
-  Serbia - 0 puntos (ranking: 1524)
-Grupo D
-  Canada - 0 puntos (ranking: 1532)
-  Rusia - 0 puntos (ranking: 1516)
-  Suiza - 0 puntos (ranking: 1625)
-  Croacia - 0 puntos (ranking: 1699)
-Grupo E
-  Nicaragua - 0 puntos (ranking: 1114)
-  Suecia - 0 puntos (ranking: 1536)
-  Austria - 0 puntos (ranking: 1580)
-  Hungria - 0 puntos (ranking: 1503)
-Grupo F
-  Peru - 0 puntos (ranking: 1483)
-  Iran - 0 puntos (ranking: 1637)
-  Francia - 0 puntos (ranking: 1853)
-  Tailandia - 0 puntos (ranking: 1234)
-Grupo G
-  Alemania - 0 puntos (ranking: 1717)
-  Zambia - 0 puntos (ranking: 1276)
-  Cabo-Verde - 0 puntos (ranking: 1344)
-  Espana - 0 puntos (ranking: 1855)
-Grupo H
-  India - 0 puntos (ranking: 1132)
-  Tayikistan - 0 puntos (ranking: 1203)
-  Mexico - 0 puntos (ranking: 1647)
-  Dinamarca - 0 puntos (ranking: 1618)
-Grupo I
-  Estados-Unidos - 0 puntos (ranking: 1649)
-  Argentina - 0 puntos (ranking: 1886)
-  Oman - 0 puntos (ranking: 1324)
-  Belgica - 0 puntos (ranking: 1736)
-Grupo J
-  Angola - 0 puntos (ranking: 1280)
-  Sudafrica - 0 puntos (ranking: 1445)
-  Senegal - 0 puntos (ranking: 1630)
-  Gales - 0 puntos (ranking: 1536)
-Grupo K
-  Australia - 0 puntos (ranking: 1555)
-  Egipto - 0 puntos (ranking: 1519)
-  Nueva-Zelanda - 0 puntos (ranking: 1285)
-  Paises-Bajos - 0 puntos (ranking: 1752)
-Grupo L
-  Uruguay - 0 puntos (ranking: 1679)
+Grupo A --------------------
+  Arabia-Saudita - 0 puntos (ranking: 1419)
   Brazil - 0 puntos (ranking: 1776)
-  San-Vicente-y-las-Granadinas - 0 puntos (ranking: 966)
+  Uruguay - 0 puntos (ranking: 1679)
+  China - 0 puntos (ranking: 1251)
+Grupo B --------------------
+  Egipto - 0 puntos (ranking: 1519)
+  Estados-Unidos - 0 puntos (ranking: 1649)
+  Camerun - 0 puntos (ranking: 1466)
+  Peru - 0 puntos (ranking: 1483)
+Grupo C --------------------
+  Comoras - 0 puntos (ranking: 1203)
+  San-Cristobal-y-Nieves - 0 puntos (ranking: 1065)
+  Belgica - 0 puntos (ranking: 1736)
+  Oman - 0 puntos (ranking: 1324)
+Grupo D --------------------
+  Paraguay - 0 puntos (ranking: 1476)
+  Islas-Salomon - 0 puntos (ranking: 1046)
+  Mexico - 0 puntos (ranking: 1647)
+  Argelia - 0 puntos (ranking: 1507)
+Grupo E --------------------
+  Tailandia - 0 puntos (ranking: 1234)
+  Ucrania - 0 puntos (ranking: 1560)
+  Venezuela - 0 puntos (ranking: 1477)
+  Espana - 0 puntos (ranking: 1855)
+Grupo F --------------------
+  Gales - 0 puntos (ranking: 1536)
+  Italia - 0 puntos (ranking: 1718)
+  Croacia - 0 puntos (ranking: 1699)
+  Portugal - 0 puntos (ranking: 1750)
+Grupo G --------------------
+  Polonia - 0 puntos (ranking: 1517)
+  Jordania - 0 puntos (ranking: 1389)
+  Canada - 0 puntos (ranking: 1532)
+  Suecia - 0 puntos (ranking: 1536)
+Grupo H --------------------
+  Rusia - 0 puntos (ranking: 1516)
+  Barein - 0 puntos (ranking: 1290)
+  Vanuatu - 0 puntos (ranking: 992)
+  Uzbekistan - 0 puntos (ranking: 1437)
+Grupo I --------------------
+  Francia - 0 puntos (ranking: 1853)
+  Malasia - 0 puntos (ranking: 1124)
+  Serbia - 0 puntos (ranking: 1524)
+  Paises-Bajos - 0 puntos (ranking: 1752)
+Grupo J --------------------
+  Senegal - 0 puntos (ranking: 1630)
+  Austria - 0 puntos (ranking: 1580)
+  Costa-de-Marfil - 0 puntos (ranking: 1487)
+  Tunez - 0 puntos (ranking: 1474)
+Grupo K --------------------
+  Panama - 0 puntos (ranking: 1518)
+  Guatemala - 0 puntos (ranking: 1197)
   Marruecos - 0 puntos (ranking: 1694)
+  Ecuador - 0 puntos (ranking: 1568)
+Grupo L --------------------
+  Siria - 0 puntos (ranking: 1254)
+  Ghana - 0 puntos (ranking: 1333)
+  Alemania - 0 puntos (ranking: 1717)
+  Inglaterra - 0 puntos (ranking: 1819)

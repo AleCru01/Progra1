@@ -214,7 +214,7 @@ void imprimirGrupos(struct Grupo grupos[]) {
 	int i, j;
     for (i = 0; i < 12; i++) {
         printf("\nGrupo %c\n", 'A' + i);
-        fprintf(archivo, "Grupo %c\n", 'A'+i);
+        fprintf(archivo, "Grupo %c --------------------\n", 'A'+i);
         for (j = 0; j < 4; j++) {
         	fprintf(archivo,"  %s - %d puntos (ranking: %d)\n",grupos[i].nombres[j],grupos[i].puntos[j],grupos[i].rankings[j]);
             printf("  %s - %d puntos (ranking: %d)\n",grupos[i].nombres[j],grupos[i].puntos[j],grupos[i].rankings[j]);
@@ -234,7 +234,7 @@ void CreacionGrupos(){
     char **nombres;
     int *rankings;
     int cantidad = 0;
-    int i, j;
+    int i, j, a,b;
     obtenerDatosConfederacion(archivo, &nombres, &rankings, &cantidad);
     
     int usados[48] = {0};  // inicializar todos en 0
@@ -249,6 +249,8 @@ void CreacionGrupos(){
 	}
     
     imprimirGrupos(grupos);
+    
+    
 	
     // Liberar memoria usada para nombres
     for (i = 0; i < 12; i++) {
