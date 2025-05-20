@@ -210,10 +210,13 @@ struct Grupo {
 };
 
 void imprimirGrupos(struct Grupo grupos[]) {
+	FILE *archivo = fopen("Grupos.txt", "w");
 	int i, j;
     for (i = 0; i < 12; i++) {
         printf("\nGrupo %c\n", 'A' + i);
+        fprintf(archivo, "Grupo %c\n", 'A'+i);
         for (j = 0; j < 4; j++) {
+        	fprintf(archivo,"  %s - %d puntos (ranking: %d)\n",grupos[i].nombres[j],grupos[i].puntos[j],grupos[i].rankings[j]);
             printf("  %s - %d puntos (ranking: %d)\n",grupos[i].nombres[j],grupos[i].puntos[j],grupos[i].rankings[j]);
         }
     }

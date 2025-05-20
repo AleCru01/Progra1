@@ -23,7 +23,7 @@ int main(){
 		printf("Presione una tecla para comenzar...");
 		getch();
 		system("cls");
-		CreacionGrupos();
+		CreacionGrupos(); //aqui mismo tambien se ejecuta la fase de grupos
 	}else{
 		return 1;
 	}

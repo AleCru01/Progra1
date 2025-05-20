@@ -1,0 +1,60 @@
+Grupo A
+  Camerun - 0 puntos (ranking: 1466)
+  Inglaterra - 0 puntos (ranking: 1819)
+  Siria - 0 puntos (ranking: 1254)
+  Colombia - 0 puntos (ranking: 1679)
+Grupo B
+  Vietnam - 0 puntos (ranking: 1184)
+  Ecuador - 0 puntos (ranking: 1568)
+  Santa-Lucia - 0 puntos (ranking: 986)
+  Turquia - 0 puntos (ranking: 1551)
+Grupo C
+  Malasia - 0 puntos (ranking: 1124)
+  Costa-de-Marfil - 0 puntos (ranking: 1487)
+  Egipto - 0 puntos (ranking: 1519)
+  Serbia - 0 puntos (ranking: 1524)
+Grupo D
+  Canada - 0 puntos (ranking: 1532)
+  Rusia - 0 puntos (ranking: 1516)
+  Suiza - 0 puntos (ranking: 1625)
+  Croacia - 0 puntos (ranking: 1699)
+Grupo E
+  Nicaragua - 0 puntos (ranking: 1114)
+  Suecia - 0 puntos (ranking: 1536)
+  Austria - 0 puntos (ranking: 1580)
+  Hungria - 0 puntos (ranking: 1503)
+Grupo F
+  Peru - 0 puntos (ranking: 1483)
+  Iran - 0 puntos (ranking: 1637)
+  Francia - 0 puntos (ranking: 1853)
+  Tailandia - 0 puntos (ranking: 1234)
+Grupo G
+  Alemania - 0 puntos (ranking: 1717)
+  Zambia - 0 puntos (ranking: 1276)
+  Cabo-Verde - 0 puntos (ranking: 1344)
+  Espana - 0 puntos (ranking: 1855)
+Grupo H
+  India - 0 puntos (ranking: 1132)
+  Tayikistan - 0 puntos (ranking: 1203)
+  Mexico - 0 puntos (ranking: 1647)
+  Dinamarca - 0 puntos (ranking: 1618)
+Grupo I
+  Estados-Unidos - 0 puntos (ranking: 1649)
+  Argentina - 0 puntos (ranking: 1886)
+  Oman - 0 puntos (ranking: 1324)
+  Belgica - 0 puntos (ranking: 1736)
+Grupo J
+  Angola - 0 puntos (ranking: 1280)
+  Sudafrica - 0 puntos (ranking: 1445)
+  Senegal - 0 puntos (ranking: 1630)
+  Gales - 0 puntos (ranking: 1536)
+Grupo K
+  Australia - 0 puntos (ranking: 1555)
+  Egipto - 0 puntos (ranking: 1519)
+  Nueva-Zelanda - 0 puntos (ranking: 1285)
+  Paises-Bajos - 0 puntos (ranking: 1752)
+Grupo L
+  Uruguay - 0 puntos (ranking: 1679)
+  Brazil - 0 puntos (ranking: 1776)
+  San-Vicente-y-las-Granadinas - 0 puntos (ranking: 966)
+  Marruecos - 0 puntos (ranking: 1694)
