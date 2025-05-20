@@ -1,60 +1,60 @@
 Grupo A --------------------
+  Kirguistan - 0 puntos (ranking: 1206)
   Estados-Unidos - 0 puntos (ranking: 1649)
-  Guinea-Ecuatorial - 0 puntos (ranking: 1256)
-  Uruguay - 0 puntos (ranking: 1679)
-  Polonia - 0 puntos (ranking: 1517)
-Grupo B --------------------
-  Nueva-Zelanda - 0 puntos (ranking: -1899683690)
-  Mali - 0 puntos (ranking: 1460)
-  Ecuador - 0 puntos (ranking: 1568)
-  Barein - 0 puntos (ranking: 1290)
-Grupo C --------------------
-  Colombia - 0 puntos (ranking: 1679)
-  Hungria - 0 puntos (ranking: 1503)
-  Nigeria - 0 puntos (ranking: 1481)
-  Senegal - 0 puntos (ranking: 1630)
-Grupo D --------------------
-  Catar - 0 puntos (ranking: 1457)
-  Turquia - 0 puntos (ranking: 1551)
-  Cuba - 0 puntos (ranking: 980)
-  Austria - 0 puntos (ranking: 1580)
-Grupo E --------------------
-  Portugal - 0 puntos (ranking: 1750)
-  Egipto - 0 puntos (ranking: 1519)
-  Peru - 0 puntos (ranking: 1483)
-  Argelia - 0 puntos (ranking: 1507)
-Grupo F --------------------
-  Aruba - 0 puntos (ranking: 864)
-  China - 0 puntos (ranking: 1251)
-  Venezuela - 0 puntos (ranking: 1477)
-  Alemania - 0 puntos (ranking: 1717)
-Grupo G --------------------
-  Marruecos - 0 puntos (ranking: 1694)
-  Dinamarca - 0 puntos (ranking: 1618)
-  Ghana - 0 puntos (ranking: 1333)
-  Corea-del-Sur - 0 puntos (ranking: 1575)
-Grupo H --------------------
-  Indonesia - 0 puntos (ranking: 1143)
-  Canada - 0 puntos (ranking: 1532)
-  Brazil - 0 puntos (ranking: 1776)
-  Mexico - 0 puntos (ranking: 1647)
-Grupo I --------------------
-  Japon - 0 puntos (ranking: 1653)
-  Serbia - 0 puntos (ranking: 1524)
   Espana - 0 puntos (ranking: 1855)
-  Paises-Bajos - 0 puntos (ranking: 1752)
-Grupo J --------------------
-  Benin - 0 puntos (ranking: 1240)
-  Suiza - 0 puntos (ranking: 1625)
-  Gales - 0 puntos (ranking: 1536)
-  Nueva-Caledonia - 0 puntos (ranking: 1040)
-Grupo K --------------------
-  Inglaterra - 0 puntos (ranking: 1819)
-  Francia - 0 puntos (ranking: 1853)
-  Belgica - 0 puntos (ranking: 1736)
-  Malasia - 0 puntos (ranking: 1124)
-Grupo L --------------------
+  Uzbekistan - 0 puntos (ranking: 1437)
+Grupo B --------------------
+  Peru - 0 puntos (ranking: 1483)
+  Islas-Turcas-y-Caicos - 0 puntos (ranking: 804)
+  Camerun - 0 puntos (ranking: 1466)
+  Montserrat - 0 puntos (ranking: 914)
+Grupo C --------------------
+  Nigeria - 0 puntos (ranking: 1481)
+  Burkina-Faso - 0 puntos (ranking: 1385)
+  Dinamarca - 0 puntos (ranking: 1618)
+  Gabon - 0 puntos (ranking: 1310)
+Grupo D --------------------
+  Uruguay - 0 puntos (ranking: 1679)
+  Rusia - 0 puntos (ranking: 1516)
+  Colombia - 0 puntos (ranking: 1679)
+  Mexico - 0 puntos (ranking: 1647)
+Grupo E --------------------
   Suecia - 0 puntos (ranking: 1536)
-  Costa-Rica - 0 puntos (ranking: 1459)
-  Corea-del-Norte - 0 puntos (ranking: 1153)
-  Bermudas - 0 puntos (ranking: 978)
+  Paises-Bajos - 0 puntos (ranking: 1752)
+  Arabia-Saudita - 0 puntos (ranking: 1419)
+  Ecuador - 0 puntos (ranking: 1568)
+Grupo F --------------------
+  Hungria - 0 puntos (ranking: 1503)
+  Papua-Nueva-Guinea - 0 puntos (ranking: 969)
+  Comoras - 0 puntos (ranking: 1203)
+  Nueva-Zelanda - 0 puntos (ranking: 1285)
+Grupo G --------------------
+  Brazil - 0 puntos (ranking: 1776)
+  Republica-Democratica-del-Congo - 0 puntos (ranking: 1407)
+  Australia - 0 puntos (ranking: 1555)
+  Italia - 0 puntos (ranking: 1718)
+Grupo H --------------------
+  Tunez - 0 puntos (ranking: 1474)
+  Islas-Virgenes-Britanicas - 0 puntos (ranking: 780)
+  Croacia - 0 puntos (ranking: 1699)
+  Portugal - 0 puntos (ranking: 1750)
+Grupo I --------------------
+  Argelia - 0 puntos (ranking: 1507)
+  Francia - 0 puntos (ranking: 1853)
+  Suiza - 0 puntos (ranking: 1625)
+  Belgica - 0 puntos (ranking: 1736)
+Grupo J --------------------
+  Polonia - 0 puntos (ranking: 1517)
+  Alemania - 0 puntos (ranking: 1717)
+  Paraguay - 0 puntos (ranking: 1476)
+  Austria - 0 puntos (ranking: 1580)
+Grupo K --------------------
+  Cabo-Verde - 0 puntos (ranking: 1344)
+  Ucrania - 0 puntos (ranking: 1560)
+  Jordania - 0 puntos (ranking: 1389)
+  Oman - 0 puntos (ranking: 1324)
+Grupo L --------------------
+  Emiratos-Arabes-Unidos - 0 puntos (ranking: 1383)
+  Palestina - 0 puntos (ranking: 1225)
+  Canada - 0 puntos (ranking: 1532)
+  Egipto - 0 puntos (ranking: 1519)

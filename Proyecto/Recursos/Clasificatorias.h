@@ -256,12 +256,12 @@ void CreacionGrupos(){
     system("cls");
     
 printf(" ######                                                                     \n");
-printf(" #     # ######  ####  #  ####  ###### #  ####    ##   #    #  ####   ####  
-printf(" #     # #      #      # #      #      # #       #  #  #    # #    # #      
-printf(" #     # #####   ####  #  ####  #####  #  ####  #    # #    # #    #  ####  
-printf(" #     # #           # #      # #      #      # ###### #    # #    #      # 
-printf(" #     # #      #    # # #    # #      # #    # #    #  #  #  #    # #    # 
-printf(" ######  ######  ####  #  ####  ###### #  ####  #    #   ##    ####   ####  
+printf(" #     # ######  ####  #  ####  ###### #  ####    ##   #    #  ####   ####  \n");
+printf(" #     # #      #      # #      #      # #       #  #  #    # #    # #      \n");
+printf(" #     # #####   ####  #  ####  #####  #  ####  #    # #    # #    #  ####  \n");
+printf(" #     # #           # #      # #      #      # ###### #    # #    #      # \n");
+printf(" #     # #      #    # # #    # #      # #    # #    #  #  #  #    # #    # \n");
+printf(" ######  ######  ####  #  ####  ###### #  ####  #    #   ##    ####   ####  \n\n\n");
                                                                             
 
     FILE *desiseisavos = fopen("Diesis.txt", "w");
@@ -271,17 +271,203 @@ printf(" ######  ######  ####  #  ####  ###### #  ####  #    #   ##    ####   ##
 		int grupo[4] = {0};
     	for(j = 0; j<2; j++){
     		int num = sacarUnNumero(grupo,4);
-    		fprintf(desiseisavos, "%s %d", grupos[i].nombres[num], grupos[i].rankings[num]);
+    		fprintf(desiseisavos, "%s %d\n", grupos[i].nombres[num], grupos[i].rankings[num]);
     		printf("El pais que avanza es: %s con %d\n", grupos[i].nombres[num], grupos[i].rankings[num]);
 		}
 		if(i < 8){
 			int num = sacarUnNumero(grupo,4);
-    		fprintf(desiseisavos, "%s %d", grupos[i].nombres[num], grupos[i].rankings[num]);
+    		fprintf(desiseisavos, "%s %d\n", grupos[i].nombres[num], grupos[i].rankings[num]);
     		printf("El pais que avanza es: %s con %d\n", grupos[i].nombres[num], grupos[i].rankings[num]);
 		}
 	}
 	
+    fclose(desiseisavos);
     
+    printf("Presione cualquier tecla para continuar...");
+    getch();
+    system("cls");
+    
+                                                 
+printf("\n\n  ####   ####  #####   ##   #    #  ####   ####  \n");
+printf(" #    # #    #   #    #  #  #    # #    # #      \n");
+printf(" #    # #        #   #    # #    # #    #  ####  \n");
+printf(" #    # #        #   ###### #    # #    #      # \n");
+printf(" #    # #    #   #   #    #  #  #  #    # #    # \n");
+printf("  ####   ####    #   #    #   ##    ####   ####  \n\n\n");
+                                                 
+
+    
+    
+    desiseisavos = fopen("Diesis.txt", "r");
+    
+    free(nombres);
+    free(rankings);
+    
+    //OCTAVOS
+    FILE *octavos = fopen("octavos.txt", "w");
+    
+    //volvemos a leer
+    
+    obtenerDatosConfederacion(desiseisavos, &nombres, &rankings, &cantidad);
+    int oct[16] = {0};
+    for(i = 0; i<16; i++){
+    	int num = sacarUnNumero(oct,32);
+    	fprintf(octavos, "%s %d\n", nombres[num], rankings[num]);
+    	printf("El pais que avanza es: %s con %d\n", nombres[num], rankings[num]);
+	}
+	
+	//cuartos
+	fclose(desiseisavos);
+	fclose(octavos);
+	
+	octavos = fopen("octavos.txt", "r");
+	printf("Presione cualquier tecla para continuar...");
+    getch();
+    system("cls");
+    
+    
+                                                 
+printf("  ####  #    #   ##   #####  #####  ####   ####  \n");
+printf(" #    # #    #  #  #  #    #   #   #    # #      \n");
+printf(" #      #    # #    # #    #   #   #    #  ####  \n");
+printf(" #      #    # ###### #####    #   #    #      # \n");
+printf(" #    # #    # #    # #   #    #   #    # #    # \n");
+printf("  ####   ####  #    # #    #   #    ####   ####  \n\n");
+                                                 
+
+	free(nombres);
+    free(rankings);
+    
+    //OCTAVOS
+    FILE *cuartos = fopen("cuartos.txt", "w");
+    
+    //volvemos a leer
+    
+    obtenerDatosConfederacion(octavos, &nombres, &rankings, &cantidad);
+	int cuar[8] = {0};
+    for(i = 0; i<8; i++){
+    	int num = sacarUnNumero(cuar,16);
+    	fprintf(cuartos, "%s %d\n", nombres[num], rankings[num]);
+    	printf("El pais que avanza es: %s con %d\n", nombres[num], rankings[num]);
+	}
+	
+	////////SEMIS
+	fclose(octavos);
+	fclose(cuartos);
+	
+	cuartos = fopen("cuartos.txt", "r");
+	printf("Presione cualquier tecla para continuar...");
+    getch();
+    system("cls");
+    
+                                                      
+printf("  ####  ###### #    # # ###### # #    #   ##   #      \n");
+printf(" #      #      ##  ## # #      # ##   #  #  #  #      \n");
+printf("  ####  #####  # ## # # #####  # # #  # #    # #      \n");
+printf("      # #      #    # # #      # #  # # ###### #      \n");
+printf(" #    # #      #    # # #      # #   ## #    # #      \n");
+printf("  ####  ###### #    # # #      # #    # #    # ###### \n\n");
+                                                      
+
+	
+	free(nombres);
+    free(rankings);
+    
+    //OCTAVOS
+    FILE *semis = fopen("semis.txt", "w");
+    
+    //volvemos a leer
+    
+    obtenerDatosConfederacion(cuartos, &nombres, &rankings, &cantidad);
+	int semi[4] = {0};
+    for(i = 0; i<4; i++){
+    	int num = sacarUnNumero(semi,8);
+    	fprintf(semis, "%s %d\n", nombres[num], rankings[num]);
+    	printf("El pais que avanza es: %s con %d\n", nombres[num], rankings[num]);
+	}
+	
+	////////FINAL
+	fclose(cuartos);
+	fclose(semis);
+	
+	semis = fopen("semis.txt", "r");
+	printf("Presione cualquier tecla para continuar...");
+    getch();
+    system("cls");
+    
+                                                      
+
+                               
+printf(" ###### # #    #   ##   #      \n");
+printf(" #      # ##   #  #  #  #      \n");
+printf(" #####  # # #  # #    # #      \n");
+printf(" #      # #  # # ###### #      \n");
+printf(" #      # #   ## #    # #      \n");
+printf(" #      # #    # #    # ###### \n\n");
+                               
+
+                                                      
+
+	
+	free(nombres);
+    free(rankings);
+    
+    //OCTAVOS
+    FILE *final = fopen("final.txt", "w");
+    
+    //volvemos a leer
+    
+    obtenerDatosConfederacion(semis, &nombres, &rankings, &cantidad);
+	int fin[2] = {0};
+    for(i = 0; i<2; i++){
+    	int num = sacarUnNumero(fin,4);
+    	fprintf(final, "%s %d\n", nombres[num], rankings[num]);
+    	printf("El pais que avanza es: %s con %d\n", nombres[num], rankings[num]);
+	}
+	
+	////////GANADOR
+	fclose(semis);
+	fclose(final);
+	
+	final = fopen("final.txt", "r");
+	printf("Presione cualquier tecla para continuar...");
+    getch();
+    system("cls");
+    
+                                                      
+
+                                                  
+printf("  ####    ##   #    #   ##   #####   ####  #####  \n");
+printf(" #    #  #  #  ##   #  #  #  #    # #    # #    # \n");
+printf(" #      #    # # #  # #    # #    # #    # #    # \n");
+printf(" #  ### ###### #  # # ###### #    # #    # #####  \n");
+printf(" #    # #    # #   ## #    # #    # #    # #   #  \n");
+printf("  ####  #    # #    # #    # #####   ####  #    # \n\n");
+                                                  
+
+
+                                                      
+
+	
+	free(nombres);
+    free(rankings);
+    
+    //OCTAVOS
+    FILE *ganador = fopen("ganador.txt", "w");
+    
+    //volvemos a leer
+    
+    obtenerDatosConfederacion(final, &nombres, &rankings, &cantidad);
+	int gan[1] = {0};
+    for(i = 0; i<1; i++){
+    	int num = sacarUnNumero(gan,2);
+    	fprintf(ganador, "%s %d\n", nombres[num], rankings[num]);
+    	printf("EL CAMPEON es: %s con %d\n", nombres[num], rankings[num]);
+	}
+	
+	
+	
+	
 	
     // Liberar memoria usada para nombres
     for (i = 0; i < 12; i++) {
@@ -291,6 +477,7 @@ printf(" ######  ######  ####  #  ####  ###### #  ####  #    #   ##    ####   ##
     }
 	 
 	for (i = 0; i < cantidad; i++) free(nombres[i]);
+	
     free(nombres);
     free(rankings);
 }
