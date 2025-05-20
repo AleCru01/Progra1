@@ -2,6 +2,7 @@
 #include "Recursos/Clasificatorias.h" //Librería propia para hacer las clasificatorias
 #include <stdlib.h>
 #include <time.h>
+#include <windows.h>
 
 int main(){
 	printf("oo____oo____oo____oooo____ooooooo___oo______oooooo__________oooo___oo______oo_ooooooo_______ooooo_____ooo_o____ooooo___oooooo__\n");
@@ -19,6 +20,9 @@ int main(){
 	if(desicion == 1){
 		InicioClasificacion();
 		repechaje();
+		printf("Presione una tecla para comenzar...");
+		getch();
+		system("cls");
 	}else{
 		return 1;
 	}

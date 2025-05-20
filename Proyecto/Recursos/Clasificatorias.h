@@ -83,7 +83,15 @@ void clasificacion(FILE *confederacion, int cupos, int playoffs){
 	int PlayOff[playoffs];
 	
 	obtenerDatosConfederacion(confederacion, &nombres, &rankings, &cantidad);
-	printf("\nPaises y Rankings De la Confederacion\n\n");
+	
+printf(" .--.              .--.       .-.                         _             \n");
+printf(": .--'            : .-'       : :                        :_;            \n");
+printf(": :    .--. ,-.,-.: `;.--.  .-' : .--. .--.  .--.   .--. .-. .--. ,-.,-.\n");
+printf(": :__ ' .; :: ,. :: :' '_.'' .; :' '_.': ..'' .; ; '  ..': :' .; :: ,. :\n");
+printf("`.__.'`.__.':_;:_;:_;`.__.'`.__.'`.__.':_;  `.__,_;`.__.':_;`.__.':_;:_;\n\n");
+                                                                        
+                                                                        
+
 	int i;
 	for(i = 0; i<cantidad; i++){
 		printf("%s - %d \n", nombres[i], rankings[i]);
@@ -173,3 +181,10 @@ void repechaje(){
 	fclose(PaisesRepechaje);
 	fclose(PaisesCla);
 }
+
+
+
+////////////////////////////
+//CREACION DE GRUPOS
+
+
