@@ -26,6 +26,7 @@ void obtenerDatosConfederacion(FILE *confederacion, char ***nombres, int **ranki
 void liberarDatosConfederacion(char **nombres, int *rankings, int cantidad);
 void obtenerDatosVictor(FILE *confederacion, char ***nombres, int **rankings, int *cantidad);
 int sacarUnSelec(int rango, int array[], int cantidad,int Salidos[], int cupos, int repe[],int CuposPlayoff);
+int ElegirUltimosLugares(int *rankings, int Salidos[], int cantidad);
 
 // ----------------------------
 // FUNCIONES NUEVAS AÑADIDAS
@@ -148,6 +149,16 @@ void partido(Equipo local, Equipo visitante) {
     } else {
         printf("\nResultado: Gana %s\n", visitante.nombre);
     }
+}
+
+int ElegirUltimosLugares(int *rankings, int Salidos[], int cantidad){
+	int numero = 1 + rand() % 6;
+	
+	if(numero == Salidos[0] || numero == Salidos[1]){
+		return ElegirUltimosLugares(rankings, Salidos, cantidad);
+	}else{
+		return numero;
+	}
 }
 
 /*
