@@ -23,6 +23,7 @@ int main(){
 		printf("Presione una tecla para comenzar...");
 		getch();
 		system("cls");
+		CreacionGrupos();
 	}else{
 		return 1;
 	}

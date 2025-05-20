@@ -2,12 +2,14 @@
 #include <stdlib.h> //libreria para definir la funcion Exit(1) y terminar el programa
 #include "Procesos.h" //Librer�a general para TODOS los procesos comunes 
 #include <time.h>
+#include <string.h>
 void definirCupos();
 void clasificacion(FILE *confederacion, int cupos, int playoffs);
 void repechaje(); //para sacar 2 paises de repechaje 
 //defini el archivo donde voy a guardar todos los datos, como GLOBAL 
 FILE *PaisesCla;
 FILE *PaisesRepechaje;
+void CreacionGrupos();
 
 
 //proceso de abrir los documentos:
@@ -73,7 +75,7 @@ void clasificacion(FILE *confederacion, int cupos, int playoffs){
 		//los punteros FILE *confederacion con FILE *CONCA pero tendria que pasarlo
 		//como parametro y ne, mjr este 3 porque igual CONCA solo tiene 3 cupos directos
 		
-		fprintf(PaisesCla, "Estados Unidos 1649\nMexico 1647\nCanada 1532\n");
+		fprintf(PaisesCla, "Estados-Unidos 1649\nMexico 1647\nCanada 1532\n");
 	}
 	
 	char **nombres = NULL;
@@ -188,3 +190,71 @@ void repechaje(){
 //CREACION DE GRUPOS
 
 
+int sacarUnNumero(int usados[]) {
+    int num;
+
+    do {
+        num = rand() % 48;
+    } while (usados[num]); // si ya fue usado, sigue buscando
+
+    usados[num] = 1; // marcar como usado
+    return num;
+}
+
+struct Grupo {
+	//ponemos 4 pq son 4 equipos alv
+    int idGrupo;
+    char *nombres[4];
+    int rankings[4];
+    int puntos[4];
+};
+
+void imprimirGrupos(struct Grupo grupos[]) {
+	int i, j;
+    for (i = 0; i < 12; i++) {
+        printf("\nGrupo %c\n", 'A' + i);
+        for (j = 0; j < 4; j++) {
+            printf("  %s - %d puntos (ranking: %d)\n",grupos[i].nombres[j],grupos[i].puntos[j],grupos[i].rankings[j]);
+        }
+    }
+}
+
+
+
+void CreacionGrupos(){
+	struct Grupo grupos[12];
+    FILE *archivo = fopen("Recursos/PaisesFinales.txt", "r");
+    if(!archivo){
+    	printf("NO SE PUDO ABRIR ARCHIVO PARA CREAR LOS GRUPOS");
+	}
+    //Obtener datos: 
+    char **nombres;
+    int *rankings;
+    int cantidad = 0;
+    int i, j;
+    obtenerDatosConfederacion(archivo, &nombres, &rankings, &cantidad);
+    
+    int usados[48] = {0};  // inicializar todos en 0
+
+	for(i = 0; i < 12; i++) {
+	    for(j = 0; j < 4; j++) {
+	        int num = sacarUnNumero(usados);
+	        grupos[i].nombres[j] = strdup(nombres[num]); 
+	        grupos[i].rankings[j] = rankings[num]; 
+	        grupos[i].puntos[j] = 0;
+	    }
+	}
+    
+    imprimirGrupos(grupos);
+	
+    // Liberar memoria usada para nombres
+    for (i = 0; i < 12; i++) {
+        for (j = 0; j < 4; j++) {
+            free(grupos[i].nombres[j]);
+        }
+    }
+	 
+	for (i = 0; i < cantidad; i++) free(nombres[i]);
+    free(nombres);
+    free(rankings);
+}
