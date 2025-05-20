@@ -190,11 +190,11 @@ void repechaje(){
 //CREACION DE GRUPOS
 
 
-int sacarUnNumero(int usados[]) {
+int sacarUnNumero(int usados[], int max) {
     int num;
 
     do {
-        num = rand() % 48;
+        num = rand() % max;
     } while (usados[num]); // si ya fue usado, sigue buscando
 
     usados[num] = 1; // marcar como usado
@@ -220,6 +220,7 @@ void imprimirGrupos(struct Grupo grupos[]) {
             printf("  %s - %d puntos (ranking: %d)\n",grupos[i].nombres[j],grupos[i].puntos[j],grupos[i].rankings[j]);
         }
     }
+    fclose(archivo);
 }
 
 
@@ -241,7 +242,7 @@ void CreacionGrupos(){
 
 	for(i = 0; i < 12; i++) {
 	    for(j = 0; j < 4; j++) {
-	        int num = sacarUnNumero(usados);
+	        int num = sacarUnNumero(usados,48);
 	        grupos[i].nombres[j] = strdup(nombres[num]); 
 	        grupos[i].rankings[j] = rankings[num]; 
 	        grupos[i].puntos[j] = 0;
@@ -250,6 +251,36 @@ void CreacionGrupos(){
     
     imprimirGrupos(grupos);
     
+    printf("Presione una tecla para saber quien paso...");
+    getch();
+    system("cls");
+    
+printf(" ######                                                                     \n");
+printf(" #     # ######  ####  #  ####  ###### #  ####    ##   #    #  ####   ####  
+printf(" #     # #      #      # #      #      # #       #  #  #    # #    # #      
+printf(" #     # #####   ####  #  ####  #####  #  ####  #    # #    # #    #  ####  
+printf(" #     # #           # #      # #      #      # ###### #    # #    #      # 
+printf(" #     # #      #    # # #    # #      # #    # #    #  #  #  #    # #    # 
+printf(" ######  ######  ####  #  ####  ###### #  ####  #    #   ##    ####   ####  
+                                                                            
+
+    FILE *desiseisavos = fopen("Diesis.txt", "w");
+    
+    //vamos a sacar los 2 clasificados 
+    for(i = 0; i<12; i++){
+		int grupo[4] = {0};
+    	for(j = 0; j<2; j++){
+    		int num = sacarUnNumero(grupo,4);
+    		fprintf(desiseisavos, "%s %d", grupos[i].nombres[num], grupos[i].rankings[num]);
+    		printf("El pais que avanza es: %s con %d\n", grupos[i].nombres[num], grupos[i].rankings[num]);
+		}
+		if(i < 8){
+			int num = sacarUnNumero(grupo,4);
+    		fprintf(desiseisavos, "%s %d", grupos[i].nombres[num], grupos[i].rankings[num]);
+    		printf("El pais que avanza es: %s con %d\n", grupos[i].nombres[num], grupos[i].rankings[num]);
+		}
+	}
+	
     
 	
     // Liberar memoria usada para nombres
