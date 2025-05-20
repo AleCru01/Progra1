@@ -64,8 +64,7 @@ float probabilidad_empate(int ranking1, int ranking2) {
 Resultado simularPartidoCompleto(Equipo local, Equipo visitante) {
     Resultado resultado;
     float prob_empate = probabilidad_empate(local.ranking_fifa, visitante.ranking_fifa);
-    float prob_local = (1.0f - prob_empate) * 
-                     (visitante.ranking_fifa / (float)(local.ranking_fifa + visitante.ranking_fifa));
+    float prob_local = (1.0f - prob_empate) * (visitante.ranking_fifa / (float)(local.ranking_fifa + visitante.ranking_fifa));
     
     float random = (float)rand() / RAND_MAX;
     
