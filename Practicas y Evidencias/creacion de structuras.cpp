@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h> //libreria para definir la funcion Exit(1) y terminar el programa
 #include <time.h>
+#include <string.h>
 
 //leer datos
 void obtenerDatosConfederacion(FILE *confederacion, char ***nombres, int **rankings, int *cantidad) {
@@ -37,7 +38,10 @@ struct Grupos{
 
 main(){
 	struct Grupos totales[12]; //hago un struct de array 12
-	-
+	
 	//abrimos el archivo:
 	FILE *paises = fopen("UEFA", "r");
+	if(!paises){
+		printf("no lo encuentro w");
+	}
 }
