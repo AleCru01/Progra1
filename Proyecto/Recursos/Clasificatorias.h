@@ -163,7 +163,7 @@ void repechaje(){
 	numeros[0] = ElegirUltimosLugares(rankings, numeros, 6);
 	numeros[1] = ElegirUltimosLugares(rankings, numeros, 6);
 	
-	printf("Pais clasificado por repechaje 1: %s\n", nombres[numeros[0]]);
+	printf("Pais clasificado por repechaje 1: %s con %d puntos\n", nombres[numeros[0]]);
 	printf("Pais clasificado por repechaje 2: %s\n", nombres[numeros[1]]);
 	
 	//escibimos en archivo

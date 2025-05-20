@@ -30,14 +30,14 @@ void obtenerDatosConfederacion(FILE *confederacion, char ***nombres, int **ranki
 
 struct Grupos{
 	int idGrupo;
-	char **nombres;
+	char **nombres; //4 paises
 	int *rankings;
 	int *puntos;
 };
 
 main(){
 	struct Grupos totales[12]; //hago un struct de array 12
-	
+	-
 	//abrimos el archivo:
 	FILE *paises = fopen("UEFA", "r");
 }
